@@ -94,10 +94,21 @@ export default function Page() {
 
         </div>
 
-        {/* Social proof — pinned to bottom */}
-        <p className="text-[11px]" style={{ color: 'rgba(255,255,255,0.3)' }}>
-          +200 personas ya anotadas · Beta en CABA
-        </p>
+        {/* Bottom — social proof + legal links */}
+        <div className="flex flex-col items-center gap-1">
+          <p className="text-[11px]" style={{ color: 'rgba(255,255,255,0.3)' }}>
+            +200 personas ya anotadas · Beta en CABA
+          </p>
+          <div className="flex gap-3 text-[10px]" style={{ color: 'rgba(255,255,255,0.25)' }}>
+            <a href="/Politica_de_Privacidad_Pasito.pdf" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/40 transition-colors">
+              Política de Privacidad
+            </a>
+            <span>·</span>
+            <a href="/Terminos_y_Condiciones_Pasito.pdf" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/40 transition-colors">
+              Términos y Condiciones
+            </a>
+          </div>
+        </div>
       </div>
     </main>
   )
