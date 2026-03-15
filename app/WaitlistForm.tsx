@@ -64,7 +64,7 @@ export function WaitlistForm() {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="tu@email.com"
           disabled={status === 'loading'}
-          className="flex-1 h-13 px-4 rounded-2xl text-base outline-none transition-all disabled:opacity-60"
+          className="flex-1 h-11 px-4 rounded-2xl text-sm outline-none transition-all disabled:opacity-60"
           style={{
             background: 'rgba(255,255,255,0.12)',
             border: '1.5px solid rgba(255,255,255,0.2)',
@@ -77,7 +77,7 @@ export function WaitlistForm() {
         <button
           type="submit"
           disabled={status === 'loading' || !email.trim()}
-          className="h-13 px-6 rounded-2xl font-bold text-base flex items-center justify-center gap-2 transition-all disabled:opacity-50 hover:scale-[1.02] active:scale-[0.98] shrink-0"
+          className="h-11 px-5 rounded-2xl font-bold text-sm flex items-center justify-center gap-2 transition-all disabled:opacity-50 hover:scale-[1.02] active:scale-[0.98] shrink-0"
           style={{ background: '#EEFA7A', color: '#0C6B45' }}
         >
           {status === 'loading' ? (
