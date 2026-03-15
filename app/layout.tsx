@@ -19,6 +19,10 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: 'Pasito — Caminá y ganá premios',
   description: 'La app que te premia por caminar. Acumulá pasos y canjealos por descuentos y regalos en comercios cerca tuyo.',
+  icons: {
+    icon: '/icon.png',
+    apple: '/icon.png',
+  },
   openGraph: {
     title: 'Pasito — Caminá y ganá premios',
     description: 'La app que te premia por caminar. Próximamente en Argentina.',
