@@ -17,14 +17,14 @@ export default function Page() {
       />
 
       <div className="relative flex-1 flex flex-col items-center justify-center px-5">
-        <div className="w-full max-w-sm flex flex-col items-center text-center gap-5">
+        <div className="w-full max-w-sm flex flex-col items-center text-center gap-4">
 
           {/* Logo */}
           <Image
             src="/pasitohorizontal.png"
             alt="Pasito"
-            width={100}
-            height={34}
+            width={90}
+            height={30}
             priority
             className="brightness-0 invert"
           />
@@ -32,14 +32,14 @@ export default function Page() {
           {/* Mascot + badge */}
           <div className="flex flex-col items-center gap-2">
             <div
-              className="w-20 h-20 rounded-full flex items-center justify-center"
+              className="w-16 h-16 rounded-full flex items-center justify-center"
               style={{ background: 'rgba(238,250,122,0.12)' }}
             >
               <Image
                 src="/paloma-main.png"
                 alt=""
-                width={68}
-                height={68}
+                width={56}
+                height={56}
                 className="drop-shadow-lg"
                 aria-hidden
               />
@@ -53,14 +53,14 @@ export default function Page() {
           </div>
 
           {/* Headline */}
-          <div className="space-y-2">
+          <div className="space-y-1.5">
             <h1
-              className="text-3xl leading-tight font-display"
+              className="text-[28px] leading-tight font-display"
               style={{ color: '#EEFA7A' }}
             >
               Caminá y ganá premios
             </h1>
-            <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>
+            <p className="text-sm leading-snug" style={{ color: 'rgba(255,255,255,0.65)' }}>
               Pasito convierte tus pasos en descuentos y regalos en comercios cerca tuyo. La app que te premia por adquirir hábitos saludables.
             </p>
           </div>
@@ -85,14 +85,14 @@ export default function Page() {
 
           {/* Waitlist form */}
           <div className="w-full">
-            <p className="text-[11px] font-semibold mb-2.5 tracking-wide" style={{ color: 'rgba(255,255,255,0.45)' }}>
-              ANOTATE — SÉ EL PRIMERO EN SABER
+            <p className="text-[10px] font-semibold mb-2 tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.4)' }}>
+              Anotate — sé el primero en saber
             </p>
             <WaitlistForm />
           </div>
 
           {/* Social proof */}
-          <p className="text-xs" style={{ color: 'rgba(255,255,255,0.3)' }}>
+          <p className="text-[11px]" style={{ color: 'rgba(255,255,255,0.3)' }}>
             +200 personas ya anotadas · Beta en CABA
           </p>
 

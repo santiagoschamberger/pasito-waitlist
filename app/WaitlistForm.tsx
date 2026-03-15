@@ -56,7 +56,8 @@ export function WaitlistForm() {
 
   return (
     <form onSubmit={handleSubmit} className="w-full">
-      <div className="flex flex-col sm:flex-row gap-2">
+      {/* Always side-by-side — never stacked */}
+      <div className="flex gap-2">
         <input
           type="email"
           required
@@ -64,7 +65,7 @@ export function WaitlistForm() {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="tu@email.com"
           disabled={status === 'loading'}
-          className="flex-1 h-11 px-4 rounded-2xl text-sm outline-none transition-all disabled:opacity-60"
+          className="flex-1 min-w-0 h-13 px-4 rounded-2xl text-base outline-none transition-all disabled:opacity-60"
           style={{
             background: 'rgba(255,255,255,0.12)',
             border: '1.5px solid rgba(255,255,255,0.2)',
@@ -77,7 +78,7 @@ export function WaitlistForm() {
         <button
           type="submit"
           disabled={status === 'loading' || !email.trim()}
-          className="h-11 px-5 rounded-2xl font-bold text-sm flex items-center justify-center gap-2 transition-all disabled:opacity-50 hover:scale-[1.02] active:scale-[0.98] shrink-0"
+          className="h-13 px-5 rounded-2xl font-bold text-sm flex items-center justify-center gap-1.5 transition-all disabled:opacity-50 hover:scale-[1.02] active:scale-[0.98] shrink-0"
           style={{ background: '#EEFA7A', color: '#0C6B45' }}
         >
           {status === 'loading' ? (
@@ -85,19 +86,19 @@ export function WaitlistForm() {
           ) : (
             <>
               Anotarme
-              <ArrowRight size={16} />
+              <ArrowRight size={15} />
             </>
           )}
         </button>
       </div>
 
       {status === 'error' && (
-        <p className="text-sm mt-2 px-1" style={{ color: '#fca5a5' }}>
+        <p className="text-xs mt-2 px-1" style={{ color: '#fca5a5' }}>
           {errorMsg}
         </p>
       )}
 
-      <p className="text-xs mt-3 px-1" style={{ color: 'rgba(255,255,255,0.4)' }}>
+      <p className="text-xs mt-2 px-1" style={{ color: 'rgba(255,255,255,0.35)' }}>
         Sin spam. Te avisamos cuando lancemos, nada más.
       </p>
     </form>
