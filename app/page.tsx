@@ -31,7 +31,7 @@ export default function Page() {
           />
 
           {/* Mascot */}
-          <div className="relative">
+          <div className="flex flex-col items-center gap-3">
             <div
               className="w-28 h-28 rounded-full flex items-center justify-center"
               style={{ background: 'rgba(238,250,122,0.12)' }}
@@ -45,9 +45,8 @@ export default function Page() {
                 aria-hidden
               />
             </div>
-            {/* Floating badge */}
             <div
-              className="absolute -bottom-2 -right-2 px-2.5 py-1 rounded-full text-xs font-bold"
+              className="px-3 py-1 rounded-full text-xs font-bold"
               style={{ background: '#EEFA7A', color: '#0C6B45' }}
             >
               Próximamente
@@ -63,7 +62,7 @@ export default function Page() {
               Caminá y ganá premios
             </h1>
             <p className="text-lg md:text-xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>
-              Pasito convierte tus pasos en descuentos y regalos en comercios cerca tuyo.
+              Pasito convierte tus pasos en descuentos y regalos en comercios cerca tuyo. La app que te premia por adquirir hábitos saludables.
             </p>
           </div>
 
