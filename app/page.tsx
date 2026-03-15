@@ -16,18 +16,19 @@ export default function Page() {
         }}
       />
 
-      <div className="relative flex-1 flex flex-col items-center justify-center px-5">
-        <div className="w-full max-w-sm flex flex-col items-center text-center gap-4">
+      <div className="relative flex-1 flex flex-col items-center justify-between px-5 py-8">
 
-          {/* Logo */}
-          <Image
-            src="/pasitohorizontal.png"
-            alt="Pasito"
-            width={90}
-            height={30}
-            priority
-            className="brightness-0 invert"
-          />
+        {/* Logo — pinned to top */}
+        <Image
+          src="/pasitohorizontal.png"
+          alt="Pasito"
+          width={90}
+          height={30}
+          priority
+          className="brightness-0 invert"
+        />
+
+        <div className="w-full max-w-sm flex flex-col items-center text-center gap-4">
 
           {/* Mascot + badge */}
           <div className="flex flex-col items-center gap-2">
@@ -91,12 +92,12 @@ export default function Page() {
             <WaitlistForm />
           </div>
 
-          {/* Social proof */}
-          <p className="text-[11px]" style={{ color: 'rgba(255,255,255,0.3)' }}>
-            +200 personas ya anotadas · Beta en CABA
-          </p>
-
         </div>
+
+        {/* Social proof — pinned to bottom */}
+        <p className="text-[11px]" style={{ color: 'rgba(255,255,255,0.3)' }}>
+          +200 personas ya anotadas · Beta en CABA
+        </p>
       </div>
     </main>
   )
