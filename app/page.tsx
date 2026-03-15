@@ -16,7 +16,7 @@ export default function Page() {
         }}
       />
 
-      <div className="relative flex-1 flex flex-col items-center justify-between px-5 py-8">
+      <div className="relative flex-1 flex flex-col items-center justify-between px-5 py-4">
 
         {/* Logo — pinned to top */}
         <Image
@@ -28,7 +28,7 @@ export default function Page() {
           className="brightness-0 invert"
         />
 
-        <div className="w-full max-w-sm flex flex-col items-center text-center gap-4">
+        <div className="w-full max-w-sm flex flex-col items-center text-center gap-3">
 
           {/* Mascot + badge */}
           <div className="flex flex-col items-center gap-2">
