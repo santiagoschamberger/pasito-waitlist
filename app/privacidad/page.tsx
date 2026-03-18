@@ -42,7 +42,7 @@ export default function PrivacidadPage() {
               En Pasito, recopilamos la siguiente información:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li><strong>Información de registro:</strong> Los usuarios pueden registrarse mediante Apple, Google o email. Recopilamos el nombre, email y método de autenticación elegido.</li>
+              <li><strong>Información de registro y perfil:</strong> Los usuarios pueden registrarse mediante Apple, Google o email. Recopilamos nombre, email, método de autenticación elegido, edad, barrio, intereses personales y objetivo diario de pasos.</li>
               <li><strong>Datos de salud (conteo de pasos):</strong> Accedemos de forma <strong>solo lectura</strong> al conteo de pasos del dispositivo. Esta información se vincula a tu cuenta de Pasito para mantener tu saldo de Pasitos, historial de actividad y racha de días activos. No recopilamos ningún otro dato de salud.</li>
               <li><strong>Ubicación (opcional):</strong> Solo solicitamos acceso a tu ubicación cuando abrís el mapa de comercios cercanos. El acceso es únicamente en primer plano (mientras usás la app). No almacenamos historial de ubicación. Los proveedores del mapa (Google Maps Platform) pueden procesar tu ubicación de forma transitoria para mostrar comercios cercanos.</li>
               <li><strong>Notificaciones push (opcional):</strong> Si activás las notificaciones, almacenamos un token FCM (Firebase Cloud Messaging) vinculado a tu cuenta para enviarte notificaciones sobre tu actividad y recompensas.</li>
@@ -86,8 +86,10 @@ export default function PrivacidadPage() {
               <li><strong>Con comercios asociados:</strong> Cuando canjeás una recompensa, el comercio recibe información básica necesaria para validar el canje</li>
               <li><strong>Proveedores de servicios:</strong> Compartimos información con proveedores que nos ayudan a operar la plataforma, incluyendo:
                 <ul className="list-circle pl-6 mt-2 space-y-1">
-                  <li><strong>Google Maps Platform:</strong> Para mostrar comercios cercanos en el mapa. Google puede procesar tu ubicación de forma transitoria cuando usás esta función.</li>
-                  <li><strong>Firebase Cloud Messaging:</strong> Para enviar notificaciones push (solo si las habilitaste)</li>
+                  <li><strong>Supabase:</strong> Plataforma de base de datos y autenticación donde almacenamos tu información de cuenta, perfil, historial de pasos y canjes</li>
+                  <li><strong>Google Maps Platform:</strong> Para mostrar comercios cercanos en el mapa. Google puede procesar tu ubicación de forma transitoria cuando usás esta función</li>
+                  <li><strong>Firebase Cloud Messaging (FCM):</strong> Para enviar notificaciones push (solo si las habilitaste)</li>
+                  <li><strong>Firebase Crashlytics:</strong> Para detectar y reportar errores de la aplicación, ayudándonos a mejorar la estabilidad del servicio</li>
                   <li><strong>Proveedores de autenticación:</strong> Apple y Google para inicio de sesión mediante sus servicios</li>
                 </ul>
               </li>
@@ -128,18 +130,26 @@ export default function PrivacidadPage() {
             </ul>
             <p className="text-gray-700 leading-relaxed mt-4">
               Para ejercer estos derechos, contactanos a través de{' '}
-              <a href="mailto:soporte@pasito.com.ar" className="font-semibold" style={{ color: '#0C6B45' }}>
-                soporte@pasito.com.ar
+              <a href="mailto:contacto@pasito.app" className="font-semibold" style={{ color: '#0C6B45' }}>
+                contacto@pasito.app
               </a>
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
-              6. Cookies y Tecnologías Similares
+              6. Tecnologías de Seguimiento
             </h2>
-            <p className="text-gray-700 leading-relaxed">
-              Utilizamos cookies y tecnologías similares para mejorar tu experiencia, analizar el uso de la plataforma y personalizar el contenido. Podés controlar el uso de cookies a través de la configuración de tu navegador.
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Este sitio web no utiliza cookies de terceros ni herramientas de análisis externas. La aplicación móvil utiliza:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <li><strong>Tokens de sesión:</strong> Para mantener tu sesión activa de forma segura</li>
+              <li><strong>Firebase Crashlytics:</strong> Para detectar errores y mejorar la estabilidad de la app</li>
+              <li><strong>Almacenamiento local:</strong> Para guardar preferencias de la app en tu dispositivo</li>
+            </ul>
+            <p className="text-gray-700 leading-relaxed mt-4">
+              No utilizamos cookies de publicidad, seguimiento entre sitios, ni herramientas de análisis de comportamiento de terceros.
             </p>
           </section>
 
@@ -165,8 +175,8 @@ export default function PrivacidadPage() {
             </ul>
             <p className="text-gray-700 leading-relaxed mt-4">
               Si sos padre o tutor y descubrís que tu hijo menor de 16 años ha proporcionado información personal a Pasito, contactanos inmediatamente a{' '}
-              <a href="mailto:soporte@pasito.com.ar" className="font-semibold" style={{ color: '#0C6B45' }}>
-                soporte@pasito.com.ar
+              <a href="mailto:contacto@pasito.app" className="font-semibold" style={{ color: '#0C6B45' }}>
+                contacto@pasito.app
               </a>
               {' '}para que podamos eliminar la cuenta y los datos asociados.
             </p>
@@ -191,8 +201,8 @@ export default function PrivacidadPage() {
             <ul className="list-none space-y-2 text-gray-700 mt-4">
               <li>
                 <strong>Email:</strong>{' '}
-                <a href="mailto:soporte@pasito.com.ar" className="font-semibold" style={{ color: '#0C6B45' }}>
-                  soporte@pasito.com.ar
+                <a href="mailto:contacto@pasito.app" className="font-semibold" style={{ color: '#0C6B45' }}>
+                  contacto@pasito.app
                 </a>
               </li>
               <li>

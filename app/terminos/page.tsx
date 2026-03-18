@@ -99,7 +99,7 @@ export default function TerminosPage() {
             </p>
             <ol className="list-decimal pl-6 space-y-3 text-gray-700">
               <li><strong>El usuario selecciona una recompensa</strong> en la app y confirma el canje</li>
-              <li><strong>El comercio genera un PIN de 4 dígitos</strong> y se lo comunica al usuario</li>
+              <li><strong>El comercio proporciona su PIN fijo de 4 dígitos</strong> al usuario (cada comercio tiene un PIN único asignado)</li>
               <li><strong>El usuario ingresa el PIN</strong> en la app para completar el canje</li>
               <li><strong>Solo un PIN correcto deduce los Pasitos:</strong>
                 <ul className="list-disc pl-6 mt-2 space-y-1">
@@ -221,8 +221,8 @@ export default function TerminosPage() {
             </ul>
             <p className="text-gray-700 leading-relaxed mt-4">
               Al registrarte, confirmás que cumplís con estos requisitos de edad. Si sos padre o tutor y descubrís que tu hijo menor de 16 años está usando Pasito, contactanos inmediatamente a{' '}
-              <a href="mailto:soporte@pasito.com.ar" className="font-semibold" style={{ color: '#0C6B45' }}>
-                soporte@pasito.com.ar
+              <a href="mailto:contacto@pasito.app" className="font-semibold" style={{ color: '#0C6B45' }}>
+                contacto@pasito.app
               </a>
             </p>
           </section>
@@ -283,8 +283,8 @@ export default function TerminosPage() {
             <ul className="list-none space-y-2 text-gray-700 mt-4">
               <li>
                 <strong>Email:</strong>{' '}
-                <a href="mailto:soporte@pasito.com.ar" className="font-semibold" style={{ color: '#0C6B45' }}>
-                  soporte@pasito.com.ar
+                <a href="mailto:contacto@pasito.app" className="font-semibold" style={{ color: '#0C6B45' }}>
+                  contacto@pasito.app
                 </a>
               </li>
               <li>
