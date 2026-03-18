@@ -30,7 +30,7 @@ export default function TerminosPage() {
           Términos y Condiciones
         </h1>
         <p className="text-gray-600 mb-12">
-          Última actualización: Marzo 2026
+          Versión 1.0 · Vigente desde el 15 de marzo de 2026
         </p>
 
         <div className="prose prose-lg max-w-none space-y-8">
@@ -38,8 +38,14 @@ export default function TerminosPage() {
             <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
               1. Aceptación de los Términos
             </h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Los presentes Términos y Condiciones de Uso (en adelante, "Términos") regulan el acceso y uso de la aplicación móvil Pasito (en adelante, "la Aplicación"), desarrollada y operada por Santiago Schamberger (en adelante, "Pasito", "nosotros" o "el operador").
+            </p>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Al descargar, instalar o utilizar la Aplicación, el usuario ("vos") acepta expresamente estos Términos en su totalidad. Si no estás de acuerdo con alguna de sus cláusulas, debés abstenerte de usar la Aplicación.
+            </p>
             <p className="text-gray-700 leading-relaxed">
-              Al registrarte y usar Pasito, aceptás estos términos y condiciones en su totalidad. Si no estás de acuerdo con alguna parte de estos términos, no deberías usar nuestros servicios. Estos términos constituyen un acuerdo legal vinculante entre vos y Pasito.
+              Estos Términos se complementan con la Política de Privacidad de Pasito, que forma parte integrante de este documento.
             </p>
           </section>
 
@@ -48,127 +54,149 @@ export default function TerminosPage() {
               2. Descripción del Servicio
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Pasito es una aplicación móvil que te permite:
+              Pasito es una aplicación móvil de tipo move-to-earn disponible para dispositivos iOS y Android. Permite a los usuarios ganar puntos virtuales denominados "Pasitos" mediante la realización de actividad física (pasos caminados), y canjearlos por premios en comercios adheridos a la red Pasito, ubicados en la Ciudad Autónoma de Buenos Aires y zonas aledañas.
             </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li>Registrarte mediante <strong>Apple, Google o email</strong></li>
-              <li>Acumular Pasitos caminando (1.000 pasos = 1 Pasito)</li>
-              <li>Descubrir recompensas en comercios cercanos</li>
-              <li>Canjear Pasitos por productos y descuentos</li>
-              <li>Mantener rachas de actividad diaria</li>
-            </ul>
+            <p className="text-gray-700 leading-relaxed">
+              El servicio está sujeto a disponibilidad técnica y puede modificarse, suspenderse o interrumpirse en cualquier momento, previa notificación a los usuarios cuando sea posible.
+            </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
-              3. Registro y Cuenta
+              3. Registro y Cuenta de Usuario
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Para usar Pasito, debés:
+              Para utilizar la Aplicación, es necesario crear una cuenta mediante Apple Sign-In (iOS), Google Sign-In o inicio de sesión por email.
             </p>
             <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li>Proporcionar información precisa, completa y actualizada</li>
-              <li>Cumplir con los requisitos de edad (ver sección 10)</li>
-              <li>Mantener la seguridad de tu cuenta y contraseña</li>
-              <li>Notificarnos inmediatamente sobre cualquier uso no autorizado de tu cuenta</li>
-              <li>Ser responsable de todas las actividades que ocurran bajo tu cuenta</li>
+              <li>Garantizás que la información proporcionada es verídica, precisa y actualizada.</li>
+              <li>Asumís la responsabilidad exclusiva por el uso de tu cuenta.</li>
+              <li>Te comprometés a no compartir tus credenciales de acceso con terceros.</li>
+              <li>Notificás a Pasito inmediatamente ante cualquier uso no autorizado de tu cuenta.</li>
             </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
-              4. Acumulación de Pasitos
-            </h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Los Pasitos se acumulan de la siguiente manera:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li><strong>Conversión:</strong> 1.000 pasos = 1 Pasito</li>
-              <li><strong>Seguimiento:</strong> Los pasos se registran mediante el sensor de salud de tu dispositivo</li>
-              <li><strong>Validación:</strong> Nos reservamos el derecho de validar y ajustar el conteo de pasos para prevenir fraude</li>
-              <li><strong>Sin valor monetario:</strong> Los Pasitos no tienen valor en efectivo y no pueden ser transferidos, vendidos o intercambiados fuera de la plataforma</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
-              5. Proceso de Canje
-            </h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              El proceso de canje funciona de la siguiente manera:
-            </p>
-            <ol className="list-decimal pl-6 space-y-3 text-gray-700">
-              <li><strong>El usuario selecciona una recompensa</strong> en la app y confirma el canje</li>
-              <li><strong>El comercio proporciona su PIN fijo de 4 dígitos</strong> al usuario (cada comercio tiene un PIN único asignado)</li>
-              <li><strong>El usuario ingresa el PIN</strong> en la app para completar el canje</li>
-              <li><strong>Solo un PIN correcto deduce los Pasitos:</strong>
-                <ul className="list-disc pl-6 mt-2 space-y-1">
-                  <li>Si el PIN es correcto, los Pasitos se deducen y el canje se completa</li>
-                  <li>Si el PIN es incorrecto o el usuario cierra el flujo, NO se deducen Pasitos</li>
-                  <li>El usuario puede reintentar el canje más tarde</li>
-                </ul>
-              </li>
-            </ol>
             <p className="text-gray-700 leading-relaxed mt-4">
-              <strong>Importante:</strong> Debés presentarte físicamente en el comercio para recibir el PIN y completar el canje. Los canjes completados no son reembolsables.
+              Pasito se reserva el derecho de suspender o eliminar cuentas que hayan incurrido en conductas fraudulentas, abusivas o contrarias a estos Términos, sin obligación de compensación.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
-              6. Conducta Prohibida
+              4. El Sistema de Pasitos
             </h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              No podés:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li>Usar el servicio para actividades ilegales o fraudulentas</li>
-              <li>Intentar manipular el sistema de conteo de pasos o Pasitos</li>
-              <li>Crear múltiples cuentas para obtener ventajas indebidas</li>
-              <li>Compartir tu cuenta con terceros</li>
-              <li>Usar dispositivos, bots o scripts automatizados para generar pasos falsos</li>
-              <li>Copiar, modificar o distribuir contenido de la plataforma sin autorización</li>
-              <li>Interferir con el funcionamiento de la plataforma</li>
-              <li>Acosar, amenazar o abusar de otros usuarios o comercios</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
-              7. Permisos de la App
-            </h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              La aplicación móvil de Pasito solicita los siguientes permisos:
-            </p>
             
             <h3 className="text-xl font-semibold mb-3 mt-6" style={{ color: '#0C6B45' }}>
-              7.1 Datos de Salud (Conteo de Pasos)
+              4.1 Acumulación de Pasitos
             </h3>
             <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li><strong>Acceso:</strong> Solo lectura del conteo de pasos</li>
-              <li><strong>Propósito:</strong> Necesario para que puedas ganar Pasitos caminando</li>
-              <li><strong>Requerido:</strong> Sí. Sin este permiso no podés acumular Pasitos</li>
+              <li><strong>Conversión:</strong> 1.000 pasos = 1 Pasito (sin umbral mínimo)</li>
+              <li><strong>Tope diario:</strong> Máximo 10 Pasitos por día (equivalente a 10.000 pasos)</li>
+              <li><strong>Sincronización:</strong> Al abrir la Aplicación o con pull-to-refresh (no sincronización en segundo plano)</li>
+              <li><strong>Fuente de datos:</strong> Apple HealthKit (iOS) o Google Health Connect (Android), solo lectura</li>
+              <li><strong>Retroactividad:</strong> No se otorgan Pasitos por pasos de días anteriores que no hayan sido sincronizados</li>
             </ul>
 
             <h3 className="text-xl font-semibold mb-3 mt-6" style={{ color: '#0C6B45' }}>
-              7.2 Ubicación
+              4.2 Naturaleza de los Pasitos
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Los Pasitos son puntos virtuales sin valor monetario. No constituyen dinero electrónico, criptomoneda, crédito bancario ni ningún tipo de instrumento financiero. No son transferibles entre usuarios, no se pueden vender, comprar ni canjear por dinero en efectivo bajo ninguna circunstancia.
+            </p>
+            <p className="text-gray-700 leading-relaxed">
+              Pasito se reserva el derecho de modificar las reglas de acumulación con notificación previa de 15 días corridos a los usuarios.
+            </p>
+
+            <h3 className="text-xl font-semibold mb-3 mt-6" style={{ color: '#0C6B45' }}>
+              4.3 Expiración de Pasitos
+            </h3>
+            <p className="text-gray-700 leading-relaxed">
+              En el MVP actual, los Pasitos acumulados no tienen fecha de expiración mientras la cuenta esté activa. Pasito se reserva el derecho de introducir una política de expiración en versiones futuras, con notificación previa a los usuarios.
+            </p>
+
+            <h3 className="text-xl font-semibold mb-3 mt-6" style={{ color: '#0C6B45' }}>
+              4.4 Challenges y Bonificaciones
+            </h3>
+            <p className="text-gray-700 leading-relaxed">
+              La Aplicación puede ofrecer desafíos semanales u otras mecánicas de gamificación que permiten ganar Pasitos adicionales. Las reglas de cada challenge se especificarán dentro de la propia Aplicación y podrán modificarse o discontinuarse sin previo aviso.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
+              5. El Sistema de Canjes
+            </h2>
+            
+            <h3 className="text-xl font-semibold mb-3 mt-6" style={{ color: '#0C6B45' }}>
+              5.1 Cómo funciona el canje
+            </h3>
+            <ol className="list-decimal pl-6 space-y-2 text-gray-700">
+              <li>El usuario selecciona un premio del catálogo y toca "Canjear".</li>
+              <li>El usuario se acerca al comercio y el empleado le indica un PIN de 4 dígitos.</li>
+              <li>El usuario ingresa ese PIN en la Aplicación.</li>
+              <li>La Aplicación valida el PIN en tiempo real con el servidor.</li>
+              <li>Solo cuando el PIN es correcto se descuentan los Pasitos y el canje queda registrado como realizado.</li>
+              <li>Si el usuario cierra la pantalla o ingresa un PIN incorrecto, no se descuentan Pasitos.</li>
+            </ol>
+
+            <h3 className="text-xl font-semibold mb-3 mt-6" style={{ color: '#0C6B45' }}>
+              5.2 Límites del canje
             </h3>
             <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li><strong>Acceso:</strong> Solo cuando usás el mapa de comercios cercanos</li>
-              <li><strong>Propósito:</strong> Mostrar comercios ordenados por proximidad en el mapa</li>
-              <li><strong>Requerido:</strong> No. Es opcional</li>
-              <li><strong>Efecto de revocar:</strong> Si revocás este permiso, solo se desactiva la función de proximidad en el mapa. Podés seguir usando todas las demás funciones de la app</li>
+              <li><strong>Límite por local:</strong> 1 canje por día por comercio</li>
+              <li><strong>Precios de los premios:</strong> Variable según el premio</li>
+              <li><strong>Validación:</strong> El PIN del comercio debe ser correcto para completar el canje</li>
             </ul>
 
             <h3 className="text-xl font-semibold mb-3 mt-6" style={{ color: '#0C6B45' }}>
-              7.3 Notificaciones Push
+              5.3 Disponibilidad de premios
             </h3>
+            <p className="text-gray-700 leading-relaxed">
+              Cada premio tiene un cupo limitado por franja horaria, según lo configurado por el comercio adherido. Pasito no garantiza la disponibilidad permanente de ningún premio en particular. Los comercios y premios disponibles pueden cambiar sin previo aviso.
+            </p>
+
+            <h3 className="text-xl font-semibold mb-3 mt-6" style={{ color: '#0C6B45' }}>
+              5.4 Relación con los comercios adheridos
+            </h3>
+            <p className="text-gray-700 leading-relaxed">
+              Pasito actúa como plataforma intermediaria. La obligación de entregar el bien o servicio canjeado recae exclusivamente en el comercio adherido. Pasito no es responsable por la calidad, disponibilidad o características del producto entregado por el comercio.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
+              6. Conducta del Usuario y Prohibiciones
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Queda expresamente prohibido:
+            </p>
             <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li><strong>Acceso:</strong> Enviar notificaciones a tu dispositivo</li>
-              <li><strong>Propósito:</strong> Informarte sobre tu actividad, canjes y actualizaciones</li>
-              <li><strong>Requerido:</strong> No. Es opcional</li>
-              <li><strong>Control:</strong> Podés activar o desactivar las notificaciones en cualquier momento desde la configuración de tu dispositivo</li>
+              <li>Utilizar scripts, bots, aplicaciones de terceros o cualquier mecanismo automático para simular pasos o manipular el conteo de actividad física.</li>
+              <li>Compartir, vender o transferir Pasitos con otros usuarios.</li>
+              <li>Utilizar múltiples cuentas para acumular Pasitos de forma fraudulenta.</li>
+              <li>Intentar vulnerar la seguridad de la Aplicación o del sistema de validación de PINs.</li>
+              <li>Realizar ingeniería inversa, descompilar o modificar la Aplicación.</li>
+              <li>Utilizar la Aplicación de forma contraria a la ley argentina aplicable.</li>
             </ul>
+            <p className="text-gray-700 leading-relaxed mt-4">
+              La detección de conductas fraudulentas dará lugar a la suspensión inmediata de la cuenta y la anulación de todos los Pasitos acumulados, sin derecho a compensación. Pasito se reserva el derecho de iniciar acciones legales si correspondiere.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
+              7. Permisos que Solicita la Aplicación
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Para funcionar correctamente, la Aplicación solicita los siguientes permisos en tu dispositivo:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <li><strong>HealthKit / Health Connect (pasos, solo lectura)</strong> – Contar pasos para calcular Pasitos. Obligatorio.</li>
+              <li><strong>Ubicación (solo al usar la app)</strong> – Mostrar el mapa de comercios cercanos cuando abrís esa función. No obligatorio.</li>
+              <li><strong>Notificaciones push</strong> – Recordatorios y avisos relacionados con el servicio. No obligatorio.</li>
+              <li><strong>Internet</strong> – Sincronización con el servidor Pasito. Obligatorio.</li>
+            </ul>
+            <p className="text-gray-700 leading-relaxed mt-4">
+              Podés revocar cualquier permiso desde la configuración de tu dispositivo en cualquier momento. La revocación del permiso de salud impedirá el cálculo de Pasitos. La revocación del permiso de ubicación desactivará el mapa de cercanía, pero el resto de la Aplicación seguirá funcionando con normalidad.
+            </p>
           </section>
 
           <section>
@@ -176,127 +204,115 @@ export default function TerminosPage() {
               8. Propiedad Intelectual
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Todos los derechos de propiedad intelectual sobre la plataforma Pasito, incluyendo el software, diseño, logos, marcas y contenido, son propiedad de Pasito o sus licenciantes. No podés:
+              La Aplicación, incluyendo su código fuente, diseño visual, logotipos, nombre comercial "Pasito", textos, gráficos y cualquier otro contenido, son propiedad exclusiva de Santiago Schamberger o sus licenciantes, y están protegidos por las leyes argentinas e internacionales de propiedad intelectual.
             </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li>Usar nuestras marcas sin autorización previa por escrito</li>
-              <li>Copiar o reproducir elementos de la plataforma</li>
-              <li>Realizar ingeniería inversa del software</li>
-            </ul>
+            <p className="text-gray-700 leading-relaxed">
+              Se te otorga una licencia limitada, no exclusiva, no transferible y revocable para usar la Aplicación en tu dispositivo personal con fines estrictamente no comerciales. Queda prohibida cualquier reproducción, distribución o uso comercial del contenido sin autorización previa y por escrito.
+            </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
-              9. Limitación de Responsabilidad
+              9. Eliminación de Cuenta
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Pasito proporciona la plataforma "tal cual está". No garantizamos:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li>Que el servicio será ininterrumpido o libre de errores</li>
-              <li>La disponibilidad continua de recompensas específicas</li>
-              <li>La precisión absoluta del conteo de pasos (depende del sensor de tu dispositivo)</li>
-            </ul>
-            <p className="text-gray-700 leading-relaxed mt-4">
-              No somos responsables por:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-700 mt-2">
-              <li>Lesiones o problemas de salud relacionados con la actividad física</li>
-              <li>Disputas con comercios sobre recompensas</li>
-              <li>Pérdida de Pasitos debido a cambios en el servicio</li>
-              <li>Daños indirectos o consecuentes</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
-              10. Menores de Edad
-            </h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Pasito está diseñado para usuarios de <strong>16 años o más</strong>:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li><strong>Usuarios de 16 a 18 años:</strong> Pueden usar Pasito con el consentimiento explícito de un padre o tutor legal</li>
-              <li><strong>Menores de 16 años:</strong> Tienen prohibido usar Pasito. Si descubrimos que un menor de 16 años ha creado una cuenta, la eliminaremos inmediatamente</li>
-            </ul>
-            <p className="text-gray-700 leading-relaxed mt-4">
-              Al registrarte, confirmás que cumplís con estos requisitos de edad. Si sos padre o tutor y descubrís que tu hijo menor de 16 años está usando Pasito, contactanos inmediatamente a{' '}
+              Podés eliminar tu cuenta en cualquier momento desde la pantalla de Perfil en la Aplicación, o enviando un correo a{' '}
               <a href="mailto:contacto@pasito.app" className="font-semibold" style={{ color: '#0C6B45' }}>
                 contacto@pasito.app
               </a>
+              {' '}con el asunto "Baja de cuenta".
             </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
-              11. Suspensión y Terminación
-            </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Podemos suspender o terminar tu cuenta si:
+              Al eliminar la cuenta:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li>Violás estos términos y condiciones</li>
-              <li>Proporcionás información falsa o engañosa</li>
-              <li>Realizás actividades fraudulentas</li>
-              <li>Intentás manipular el sistema de Pasitos</li>
-              <li>Recibimos múltiples quejas sobre tu comportamiento</li>
+              <li>Todos tus Pasitos acumulados serán eliminados de forma permanente.</li>
+              <li>Tus datos personales serán borrados o anonimizados en un plazo máximo de 30 días.</li>
+              <li>Los datos de historial de canjes pueden conservarse de forma anonimizada para estadísticas.</li>
             </ul>
             <p className="text-gray-700 leading-relaxed mt-4">
-              Vos podés cancelar tu cuenta en cualquier momento desde la configuración de la app. Al cancelar, perderás todos los Pasitos acumulados.
+              La eliminación es irreversible. Si te registrás nuevamente, comenzarás desde cero.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
-              12. Modificaciones al Servicio
+              10. Limitación de Responsabilidad
             </h2>
-            <p className="text-gray-700 leading-relaxed">
-              Nos reservamos el derecho de modificar, suspender o discontinuar cualquier aspecto del servicio en cualquier momento, con o sin previo aviso. No seremos responsables ante vos o terceros por cualquier modificación, suspensión o discontinuación del servicio.
+            <p className="text-gray-700 leading-relaxed mb-4">
+              La Aplicación se provee "tal cual es" y "según disponibilidad". Pasito no garantiza que la Aplicación funcione de forma ininterrumpida, libre de errores o que los datos de pasos provistos por el sistema operativo sean siempre exactos.
+            </p>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Pasito no será responsable por:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <li>Pérdida de Pasitos ocasionada por fallos del sistema operativo, del dispositivo o de las plataformas de salud (HealthKit, Health Connect).</li>
+              <li>Imposibilidad de canjear un premio por agotamiento de stock en el comercio.</li>
+              <li>Calidad, idoneidad o disponibilidad de los productos o servicios ofrecidos por los comercios adheridos.</li>
+              <li>Daños indirectos, lucro cesante o pérdida de oportunidad derivados del uso o imposibilidad de uso de la Aplicación.</li>
+            </ul>
+            <p className="text-gray-700 leading-relaxed mt-4">
+              Esta limitación no aplica en casos de dolo o culpa grave imputable a Pasito, ni en situaciones en que la ley argentina no permita la exclusión de responsabilidad.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
-              13. Cambios a los Términos
+              11. Menores de Edad
             </h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              La Aplicación está destinada a personas de 16 años o más. Los usuarios de entre 16 y 18 años requieren el consentimiento previo de su representante legal o tutor, quien asume la responsabilidad por el cumplimiento de estos Términos.
+            </p>
             <p className="text-gray-700 leading-relaxed">
-              Podemos actualizar estos términos periódicamente. Te notificaremos sobre cambios significativos mediante notificación en la app o por email. El uso continuado del servicio después de los cambios constituye tu aceptación de los nuevos términos.
+              Los usuarios menores de 16 años tienen expresamente prohibido registrarse. Si detectamos que un menor de esa edad ha creado una cuenta, la eliminaremos de inmediato.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
-              14. Ley Aplicable y Jurisdicción
+              12. Modificaciones a los Términos
             </h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Pasito puede modificar estos Términos en cualquier momento. Los cambios serán notificados mediante un aviso en la Aplicación o por correo electrónico con al menos 15 días corridos de anticipación para modificaciones sustanciales.
+            </p>
             <p className="text-gray-700 leading-relaxed">
-              Estos términos se rigen por las leyes de la República Argentina. Cualquier disputa será resuelta en los tribunales de la Ciudad Autónoma de Buenos Aires.
+              El uso continuado de la Aplicación tras la entrada en vigencia de los nuevos Términos implica su aceptación. Si no aceptás los cambios, podés eliminar tu cuenta.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
-              15. Contacto
+              13. Ley Aplicable y Jurisdicción
             </h2>
-            <p className="text-gray-700 leading-relaxed">
-              Si tenés preguntas sobre estos términos, podés contactarnos:
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Estos Términos se rigen por las leyes de la República Argentina, incluyendo en particular la Ley N.° 24.240 de Defensa del Consumidor, la Ley N.° 25.326 de Protección de los Datos Personales, y el Código Civil y Comercial de la Nación.
             </p>
-            <ul className="list-none space-y-2 text-gray-700 mt-4">
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Para cualquier controversia derivada de estos Términos, las partes se someten a la jurisdicción de los Tribunales Ordinarios de la Ciudad Autónoma de Buenos Aires, con renuncia a cualquier otro fuero o jurisdicción que pudiera corresponder.
+            </p>
+            <p className="text-gray-700 leading-relaxed">
+              Domicilio legal del operador: Cerviño 3527, Piso 7, CP 1425, CABA, Argentina.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
+              14. Contacto
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Para consultas, reclamos o cualquier cuestión relacionada con estos Términos y Condiciones:
+            </p>
+            <ul className="list-none space-y-2 text-gray-700">
               <li>
-                <strong>Email:</strong>{' '}
+                <strong>Correo electrónico:</strong>{' '}
                 <a href="mailto:contacto@pasito.app" className="font-semibold" style={{ color: '#0C6B45' }}>
                   contacto@pasito.app
                 </a>
               </li>
               <li>
-                <strong>Dirección:</strong> Buenos Aires, Argentina
+                <strong>Asunto sugerido:</strong> "Consulta T&C" o "Reclamo"
               </li>
             </ul>
-          </section>
-
-          <section className="mt-12 p-6 rounded-xl" style={{ background: '#f0faf5', border: '2px solid #0C6B45' }}>
-            <p className="text-sm text-gray-700 leading-relaxed">
-              <strong>Nota importante:</strong> Al registrarte o usar nuestros servicios, confirmás que has leído, entendido y aceptado estos términos y condiciones, así como nuestra política de privacidad.
-            </p>
           </section>
         </div>
 
