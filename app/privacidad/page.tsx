@@ -30,183 +30,285 @@ export default function PrivacidadPage() {
           Política de Privacidad
         </h1>
         <p className="text-gray-600 mb-12">
-          Última actualización: Marzo 2026
+          Versión 1.0 · Vigente desde el 15 de marzo de 2026
         </p>
 
         <div className="prose prose-lg max-w-none space-y-8">
           <section>
             <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
-              1. Información que Recopilamos
+              1. Introducción
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              En Pasito, recopilamos la siguiente información:
+              La presente Política de Privacidad describe cómo Santiago Schamberger (en adelante, "Pasito", "nosotros" o "el responsable") recopila, utiliza, almacena y protege la información personal de los usuarios de la aplicación móvil Pasito, disponible para dispositivos iOS y Android (en adelante, "la Aplicación").
             </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li><strong>Información de registro y perfil:</strong> Los usuarios pueden registrarse mediante Apple, Google o email. Recopilamos nombre, email, método de autenticación elegido, edad, barrio, intereses personales y objetivo diario de pasos.</li>
-              <li><strong>Datos de salud (conteo de pasos):</strong> Accedemos de forma <strong>solo lectura</strong> al conteo de pasos del dispositivo. Esta información se vincula a tu cuenta de Pasito para mantener tu saldo de Pasitos, historial de actividad y racha de días activos. No recopilamos ningún otro dato de salud.</li>
-              <li><strong>Ubicación (opcional):</strong> Solo solicitamos acceso a tu ubicación cuando abrís el mapa de comercios cercanos. El acceso es únicamente en primer plano (mientras usás la app). No almacenamos historial de ubicación. Los proveedores del mapa (Google Maps Platform) pueden procesar tu ubicación de forma transitoria para mostrar comercios cercanos.</li>
-              <li><strong>Notificaciones push (opcional):</strong> Si activás las notificaciones, almacenamos un token FCM (Firebase Cloud Messaging) vinculado a tu cuenta para enviarte notificaciones sobre tu actividad y recompensas.</li>
-              <li><strong>Información de canjes:</strong> Registramos las recompensas que canjeás, incluyendo fecha, hora, comercio y Pasitos utilizados.</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
-              2. Cómo Usamos tu Información
-            </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Utilizamos la información recopilada exclusivamente para los siguientes propósitos:
+              Al registrarte y utilizar la Aplicación, aceptás esta Política de Privacidad. Si no estás de acuerdo con alguno de sus términos, por favor no uses la Aplicación.
             </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li><strong>Funcionalidad de la app:</strong> Proporcionar y mantener los servicios de Pasito, incluyendo el seguimiento de pasos, acumulación de Pasitos y gestión de canjes</li>
-              <li><strong>Procesamiento de canjes:</strong> Gestionar las transacciones de recompensas entre usuarios y comercios</li>
-              <li><strong>Notificaciones de servicio:</strong> Enviarte información importante sobre tu cuenta, canjes y actualizaciones del servicio (si habilitaste las notificaciones)</li>
-              <li><strong>Comercios cercanos por distancia:</strong> Calcular y mostrar comercios asociados ordenados por proximidad cuando usás el mapa (solo si otorgaste permiso de ubicación)</li>
-              <li><strong>Prevención de fraude y seguridad:</strong> Detectar y prevenir actividades fraudulentas, abuso del sistema o violaciones de nuestros términos</li>
-              <li><strong>Cumplimiento legal:</strong> Cumplir con obligaciones legales y regulatorias aplicables</li>
-            </ul>
-            <p className="text-gray-700 leading-relaxed mt-4">
-              <strong>No utilizamos tu información para:</strong>
-            </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-700 mt-2">
-              <li>Publicidad dirigida o marketing de terceros</li>
-              <li>Perfilado o análisis de comportamiento con fines comerciales</li>
-              <li>Venta o alquiler de datos personales</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
-              3. Compartir Información
-            </h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              No vendemos ni alquilamos tu información personal a terceros. Podemos compartir información en los siguientes casos:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li><strong>Con comercios asociados:</strong> Cuando canjeás una recompensa, el comercio recibe información básica necesaria para validar el canje</li>
-              <li><strong>Proveedores de servicios:</strong> Compartimos información con proveedores que nos ayudan a operar la plataforma, incluyendo:
-                <ul className="list-circle pl-6 mt-2 space-y-1">
-                  <li><strong>Supabase:</strong> Plataforma de base de datos y autenticación donde almacenamos tu información de cuenta, perfil, historial de pasos y canjes</li>
-                  <li><strong>Google Maps Platform:</strong> Para mostrar comercios cercanos en el mapa. Google puede procesar tu ubicación de forma transitoria cuando usás esta función</li>
-                  <li><strong>Firebase Cloud Messaging (FCM):</strong> Para enviar notificaciones push (solo si las habilitaste)</li>
-                  <li><strong>Firebase Crashlytics:</strong> Para detectar y reportar errores de la aplicación, ayudándonos a mejorar la estabilidad del servicio</li>
-                  <li><strong>Proveedores de autenticación:</strong> Apple y Google para inicio de sesión mediante sus servicios</li>
-                </ul>
-              </li>
-              <li><strong>Requerimientos legales:</strong> Cuando sea requerido por ley o para proteger nuestros derechos legales</li>
-              <li><strong>Transferencia de negocio:</strong> En caso de fusión, adquisición o venta de activos (previa notificación)</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
-              4. Seguridad de los Datos
-            </h2>
             <p className="text-gray-700 leading-relaxed">
-              Implementamos medidas de seguridad técnicas y organizativas para proteger tu información contra acceso no autorizado, alteración, divulgación o destrucción. Esto incluye:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-700 mt-4">
-              <li>Encriptación de datos en tránsito y en reposo</li>
-              <li>Autenticación segura y gestión de sesiones</li>
-              <li>Monitoreo continuo de seguridad</li>
-              <li>Acceso restringido a información personal solo al personal autorizado</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
-              5. Tus Derechos
-            </h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Tenés derecho a:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li>Acceder a tu información personal</li>
-              <li>Corregir información inexacta o incompleta</li>
-              <li>Solicitar la eliminación de tu cuenta y datos asociados</li>
-              <li>Oponerte al procesamiento de tu información</li>
-              <li>Solicitar la portabilidad de tus datos</li>
-              <li>Retirar tu consentimiento en cualquier momento</li>
-            </ul>
-            <p className="text-gray-700 leading-relaxed mt-4">
-              Para ejercer estos derechos, contactanos a través de{' '}
-              <a href="mailto:contacto@pasito.app" className="font-semibold" style={{ color: '#0C6B45' }}>
-                contacto@pasito.app
-              </a>
+              Esta política cumple con la Ley N.° 25.326 de Protección de los Datos Personales de la República Argentina y su Decreto Reglamentario N.° 1558/2001, así como con los requisitos de privacidad de Apple App Store y Google Play Store.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
-              6. Tecnologías de Seguimiento
+              2. Responsable del Tratamiento de Datos
             </h2>
+            <ul className="list-none space-y-2 text-gray-700">
+              <li><strong>Responsable:</strong> Santiago Schamberger</li>
+              <li><strong>Domicilio:</strong> Cerviño 3527, Piso 7, CP 1425, CABA, Argentina</li>
+              <li><strong>Correo electrónico:</strong> <a href="mailto:contacto@pasito.app" className="font-semibold" style={{ color: '#0C6B45' }}>contacto@pasito.app</a></li>
+              <li><strong>Aplicación:</strong> Pasito – Move to Earn</li>
+              <li><strong>Sitio web / App:</strong> pasito.app</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
+              3. Datos que Recopilamos
+            </h2>
+            
+            <h3 className="text-xl font-semibold mb-3 mt-6" style={{ color: '#0C6B45' }}>
+              3.1 Datos de registro y perfil
+            </h3>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Este sitio web no utiliza cookies de terceros ni herramientas de análisis externas. La aplicación móvil utiliza:
+              Para crear y mantener tu cuenta en Pasito, recopilamos:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li><strong>Tokens de sesión:</strong> Para mantener tu sesión activa de forma segura</li>
-              <li><strong>Firebase Crashlytics:</strong> Para detectar errores y mejorar la estabilidad de la app</li>
-              <li><strong>Almacenamiento local:</strong> Para guardar preferencias de la app en tu dispositivo</li>
+              <li>Nombre y dirección de correo electrónico, según el método de registro elegido: Apple Sign-In, Google Sign-In o inicio de sesión por email.</li>
+              <li>Edad (para verificar que cumplís con la edad mínima requerida).</li>
+              <li>Intereses seleccionados voluntariamente durante la configuración del perfil.</li>
+              <li>Meta diaria de pasos configurada por el usuario.</li>
+              <li>Barrio o zona de la Ciudad de Buenos Aires que el usuario selecciona.</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold mb-3 mt-6" style={{ color: '#0C6B45' }}>
+              3.2 Datos de salud y actividad física
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              La Aplicación solicita acceso de solo lectura al conteo de pasos diarios almacenado en Apple HealthKit (iOS) o Google Health Connect (Android). Esta información se utiliza exclusivamente para:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <li>Calcular los Pasitos ganados cada día.</li>
+              <li>Mostrar el progreso diario y el historial de actividad dentro de la Aplicación.</li>
+              <li>Registrar el streak (racha) de días consecutivos activos.</li>
+              <li>Mantener tu saldo y tu historial vinculados a tu cuenta de Pasito.</li>
             </ul>
             <p className="text-gray-700 leading-relaxed mt-4">
-              No utilizamos cookies de publicidad, seguimiento entre sitios, ni herramientas de análisis de comportamiento de terceros.
+              <strong>Importante:</strong> Pasito no recopila ningún otro dato de salud (frecuencia cardíaca, sueño, peso, calorías, etc.). Los datos de pasos no se comparten con anunciantes ni se utilizan con fines publicitarios. No se venden. Solo pueden ser procesados por proveedores técnicos necesarios para operar el servicio.
             </p>
+
+            <h3 className="text-xl font-semibold mb-3 mt-6" style={{ color: '#0C6B45' }}>
+              3.3 Datos de ubicación
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Para mostrarte comercios adheridos y premios cercanos a tu posición actual, la Aplicación solicita acceso a tu ubicación aproximada o precisa únicamente cuando abrís el mapa de comercios cercanos (permiso "Solo al usar la app").
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <li>El acceso se solicita únicamente cuando la Aplicación está activa y abierta en pantalla — Pasito no accede a tu ubicación en segundo plano.</li>
+              <li>La ubicación se utiliza en tiempo real para calcular la distancia a los comercios adheridos y ordenar las recomendaciones por cercanía.</li>
+              <li>No almacenamos un historial de tus ubicaciones ni registramos los lugares que visitás.</li>
+              <li>La ubicación no se comparte con los comercios. Puede ser procesada de forma transitoria por proveedores técnicos del mapa para renderizar la experiencia dentro de la app.</li>
+              <li>Podés revocar este permiso en cualquier momento desde Ajustes del dispositivo.</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold mb-3 mt-6" style={{ color: '#0C6B45' }}>
+              3.4 Datos de canje y actividad en la Aplicación
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Cuando realizás un canje, registramos:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <li>El comercio donde se realizó el canje y la categoría del premio.</li>
+              <li>La fecha y hora del canje.</li>
+              <li>El barrio o zona donde se ubica el comercio.</li>
+              <li>El saldo de Pasitos antes y después del canje.</li>
+            </ul>
+            <p className="text-gray-700 leading-relaxed mt-4">
+              <strong>Nota:</strong> esta es la única información que puede estar disponible de forma agregada y anonimizada para los comercios adheridos a la red Pasito, sin vincularla a ningún usuario identificable.
+            </p>
+
+            <h3 className="text-xl font-semibold mb-3 mt-6" style={{ color: '#0C6B45' }}>
+              3.5 Datos técnicos y de uso
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Como parte del funcionamiento normal de la Aplicación, podemos recopilar o almacenar:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <li>Tokens de notificaciones push (Firebase Cloud Messaging) vinculados a tu cuenta, si activás las notificaciones.</li>
+              <li>Datos técnicos mínimos necesarios para autenticarte, sincronizar tus pasos y operar la app de forma segura.</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold mb-3 mt-6" style={{ color: '#0C6B45' }}>
+              3.6 Datos que NO recopilamos
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Pasito no recopila ni almacena:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <li>Datos bancarios, de tarjetas de crédito ni medios de pago.</li>
+              <li>Documentos de identidad (DNI, CUIL, pasaporte).</li>
+              <li>Datos sensibles (origen racial, religión, opiniones políticas, datos médicos más allá del conteo de pasos).</li>
+              <li>Contactos del teléfono ni acceso a la cámara o micrófono.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
+              4. Finalidad del Tratamiento
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Los datos recopilados se utilizan exclusivamente para los siguientes fines:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <li>Prestar el servicio de la Aplicación: calcular Pasitos, gestionar el saldo, habilitar canjes.</li>
+              <li>Garantizar la seguridad y prevenir el fraude.</li>
+              <li>Enviar notificaciones push relacionadas con el servicio.</li>
+              <li>Mostrarte comercios adheridos cercanos a tu posición y ordenar las recomendaciones por distancia cuando abrís el mapa.</li>
+              <li>Cumplir con obligaciones legales aplicables en la República Argentina.</li>
+            </ul>
+            <p className="text-gray-700 leading-relaxed mt-4">
+              Pasito no realiza marketing directo, no cede datos a anunciantes y no utiliza los datos para perfilado publicitario de ningún tipo.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
+              5. Compartición de Datos con Terceros
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Pasito no vende, alquila ni comercializa datos personales. La única información que puede estar disponible para los comercios adheridos es de carácter estadístico y agregado, sin ningún dato que permita identificar a un usuario en particular.
+            </p>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Para operar el servicio, Pasito utiliza los siguientes proveedores de tecnología:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <li>Supabase – Base de datos y autenticación (EE.UU.)</li>
+              <li>Firebase (Google) – Notificaciones push (EE.UU.)</li>
+              <li>Google Maps Platform – Mapas y visualización de comercios cercanos (EE.UU.)</li>
+              <li>Apple – Autenticación via Sign in with Apple (EE.UU.)</li>
+              <li>Google – Autenticación via Google Sign-In (EE.UU.)</li>
+            </ul>
+            <p className="text-gray-700 leading-relaxed mt-4">
+              Todos estos proveedores procesan datos en servidores ubicados fuera de la Argentina (principalmente en Estados Unidos). Al aceptar esta política, el usuario consiente expresamente la transferencia internacional de sus datos en los términos del artículo 12 de la Ley 25.326.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
+              6. Datos de Salud – Declaración Especial
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Pasito accede a los datos de pasos almacenados en Apple HealthKit (iOS) o Google Health Connect (Android) únicamente bajo las siguientes condiciones:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <li><strong>Acceso de solo lectura:</strong> la Aplicación nunca escribe ni modifica datos en HealthKit ni Health Connect.</li>
+              <li><strong>Solo conteo de pasos:</strong> no se accede a ningún otro tipo de dato de salud.</li>
+              <li><strong>Vinculado a tu cuenta:</strong> los pasos sincronizados se asocian a tu cuenta de Pasito para calcular saldo, historial y rachas.</li>
+              <li><strong>No se comparte con fines comerciales:</strong> los datos de pasos no se transfieren a anunciantes, socios comerciales ni se usan para fines distintos al funcionamiento de Pasito.</li>
+              <li><strong>No se venden:</strong> bajo ninguna circunstancia los datos de salud se venden ni se usan con fines comerciales o publicitarios.</li>
+              <li>Podés revocar el acceso en cualquier momento desde la configuración de tu dispositivo.</li>
+            </ul>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
               7. Retención de Datos
             </h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Conservamos los datos personales durante el tiempo que la cuenta esté activa. Si solicitás la eliminación de tu cuenta, procederemos a borrar o anonimizar tus datos dentro de los 30 días corridos de recibida la solicitud, salvo que exista una obligación legal que requiera su conservación por un período mayor.
+            </p>
             <p className="text-gray-700 leading-relaxed">
-              Conservamos tu información personal durante el tiempo necesario para cumplir con los propósitos descritos en esta política, a menos que la ley requiera o permita un período de retención más largo.
+              Los datos de actividad física se conservan mientras la cuenta esté activa y se eliminan junto con la cuenta. Los datos agregados y anonimizados pueden conservarse indefinidamente, dado que no permiten identificar a ningún usuario.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
-              8. Menores de Edad
+              8. Derechos del Usuario (ARCO)
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Pasito está diseñado para usuarios de <strong>16 años o más</strong>:
+              De acuerdo con la Ley 25.326, tenés los siguientes derechos sobre tus datos personales:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li><strong>Usuarios de 16 a 18 años:</strong> Pueden usar Pasito con el consentimiento explícito de un padre o tutor legal</li>
-              <li><strong>Menores de 16 años:</strong> No están autorizados a usar Pasito. Si descubrimos que un menor de 16 años ha creado una cuenta, la eliminaremos inmediatamente</li>
+              <li><strong>Acceso:</strong> podés solicitar qué datos personales tuyos tenemos almacenados.</li>
+              <li><strong>Rectificación:</strong> podés corregir datos inexactos o incompletos desde la propia Aplicación o contactándonos.</li>
+              <li><strong>Cancelación / Supresión:</strong> podés solicitar la eliminación de tu cuenta y tus datos. También podés hacerlo desde la pantalla de perfil dentro de la Aplicación.</li>
+              <li><strong>Oposición:</strong> podés oponerte al tratamiento de tus datos para determinadas finalidades.</li>
             </ul>
             <p className="text-gray-700 leading-relaxed mt-4">
-              Si sos padre o tutor y descubrís que tu hijo menor de 16 años ha proporcionado información personal a Pasito, contactanos inmediatamente a{' '}
+              Para ejercer cualquiera de estos derechos, escribinos a{' '}
               <a href="mailto:contacto@pasito.app" className="font-semibold" style={{ color: '#0C6B45' }}>
                 contacto@pasito.app
               </a>
-              {' '}para que podamos eliminar la cuenta y los datos asociados.
+              {' '}con el asunto "Derechos ARCO". Responderemos dentro de los 5 días hábiles.
+            </p>
+            <p className="text-gray-700 leading-relaxed mt-4">
+              La Agencia de Acceso a la Información Pública (AAIP) es el organismo de control de la Ley 25.326. Si considerás que tus derechos no fueron atendidos, podés presentar una denuncia en{' '}
+              <a href="https://www.argentina.gob.ar/aaip" target="_blank" rel="noopener noreferrer" className="font-semibold" style={{ color: '#0C6B45' }}>
+                www.argentina.gob.ar/aaip
+              </a>.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
-              9. Cambios a esta Política
+              9. Menores de Edad
             </h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              La Aplicación está dirigida a personas de 16 años o más. Los usuarios de entre 16 y 18 años pueden utilizar la Aplicación con el consentimiento expreso de su representante legal o tutor, quien asume la responsabilidad por el uso que el menor realice.
+            </p>
             <p className="text-gray-700 leading-relaxed">
-              Podemos actualizar esta política de privacidad periódicamente. Te notificaremos sobre cambios significativos publicando la nueva política en esta página y actualizando la fecha de "última actualización". Te recomendamos revisar esta política regularmente.
+              No recopilamos intencionalmente datos de menores de 16 años. Si tomamos conocimiento de que un menor de esa edad ha creado una cuenta sin autorización, procederemos a eliminar sus datos de forma inmediata. Si sos padre, madre o tutor y creés que tu hijo/a se registró sin tu autorización, contactanos a{' '}
+              <a href="mailto:contacto@pasito.app" className="font-semibold" style={{ color: '#0C6B45' }}>
+                contacto@pasito.app
+              </a>.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
-              10. Contacto
+              10. Seguridad
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Implementamos medidas técnicas y organizativas para proteger los datos personales frente a acceso no autorizado, pérdida o divulgación, entre ellas:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <li>Comunicaciones cifradas mediante HTTPS/TLS.</li>
+              <li>Autenticación mediante proveedores de identidad reconocidos (Apple, Google).</li>
+              <li>Políticas de seguridad a nivel de base de datos (Row-Level Security en Supabase).</li>
+              <li>Funciones de backend con permisos mínimos necesarios.</li>
+              <li>Sin transmisión de información sensible en parámetros de URL.</li>
+            </ul>
+            <p className="text-gray-700 leading-relaxed mt-4">
+              Ningún sistema es completamente infalible. En caso de una brecha de seguridad que afecte tus datos, te notificaremos en los plazos y formas previstos por la normativa vigente.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
+              11. Modificaciones a esta Política
             </h2>
             <p className="text-gray-700 leading-relaxed">
-              Si tenés preguntas o inquietudes sobre esta política de privacidad, podés contactarnos:
+              Podemos actualizar esta Política de Privacidad periódicamente. Cuando lo hagamos, actualizaremos la fecha de vigencia al inicio del documento y, si los cambios son significativos, te notificaremos mediante un aviso en la Aplicación o por correo electrónico. El uso continuado de la Aplicación tras la notificación implica la aceptación de la política actualizada.
             </p>
-            <ul className="list-none space-y-2 text-gray-700 mt-4">
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4" style={{ color: '#0C6B45' }}>
+              12. Contacto
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Para consultas, reclamos o solicitudes relacionadas con esta Política de Privacidad, podés comunicarte con nosotros:
+            </p>
+            <ul className="list-none space-y-2 text-gray-700">
               <li>
-                <strong>Email:</strong>{' '}
+                <strong>Correo electrónico:</strong>{' '}
                 <a href="mailto:contacto@pasito.app" className="font-semibold" style={{ color: '#0C6B45' }}>
                   contacto@pasito.app
                 </a>
               </li>
               <li>
-                <strong>Dirección:</strong> Buenos Aires, Argentina
+                <strong>Asunto sugerido:</strong> "Consulta de Privacidad" o "Derechos ARCO"
               </li>
             </ul>
           </section>
