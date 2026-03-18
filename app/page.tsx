@@ -5,7 +5,7 @@ import { WaitlistForm } from './WaitlistForm'
 export default function Page() {
   return (
     <main
-      className="h-screen flex flex-col overflow-hidden"
+      className="min-h-screen flex flex-col overflow-y-auto"
       style={{ background: 'linear-gradient(160deg, #0C6B45 0%, #084d32 100%)' }}
     >
       <div
@@ -16,7 +16,7 @@ export default function Page() {
         }}
       />
 
-      <div className="relative flex-1 flex flex-col items-center justify-between px-5 py-4">
+      <div className="relative flex-1 flex flex-col items-center justify-between px-5 py-6 pb-8 gap-8">
 
         {/* Logo — pinned to top */}
         <Image
@@ -95,17 +95,21 @@ export default function Page() {
         </div>
 
         {/* Bottom — social proof + legal links */}
-        <div className="flex flex-col items-center gap-1">
-          <p className="text-[11px]" style={{ color: 'rgba(255,255,255,0.3)' }}>
+        <div className="flex flex-col items-center gap-1.5 mt-4">
+          <p className="text-[11px] text-center" style={{ color: 'rgba(255,255,255,0.3)' }}>
             +200 personas ya anotadas · Beta en CABA
           </p>
-          <div className="flex gap-3 text-[10px]" style={{ color: 'rgba(255,255,255,0.25)' }}>
-            <a href="/Politica_de_Privacidad_Pasito.pdf" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/40 transition-colors">
-              Política de Privacidad
+          <div className="flex flex-wrap justify-center gap-x-3 gap-y-1 text-[10px]" style={{ color: 'rgba(255,255,255,0.25)' }}>
+            <a href="/contacto" className="underline hover:text-white/40 transition-colors">
+              Contacto
             </a>
-            <span>·</span>
-            <a href="/Terminos_y_Condiciones_Pasito.pdf" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/40 transition-colors">
-              Términos y Condiciones
+            <span className="hidden sm:inline">·</span>
+            <a href="/privacidad" className="underline hover:text-white/40 transition-colors">
+              Privacidad
+            </a>
+            <span className="hidden sm:inline">·</span>
+            <a href="/terminos" className="underline hover:text-white/40 transition-colors">
+              Términos
             </a>
           </div>
         </div>
