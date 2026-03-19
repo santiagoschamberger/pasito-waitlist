@@ -27,7 +27,7 @@ export default async function Page() {
         }}
       />
 
-      <div className="relative flex-1 flex flex-col items-center justify-between px-5 py-6 pb-8 gap-8">
+      <div className="relative flex-1 flex flex-col items-center justify-center px-5 py-4 gap-4">
 
         {/* Logo — pinned to top */}
         <Image
@@ -39,7 +39,7 @@ export default async function Page() {
           className="brightness-0 invert"
         />
 
-        <div className="w-full max-w-sm flex flex-col items-center text-center gap-3">
+        <div className="w-full max-w-sm flex flex-col items-center text-center gap-2.5">
 
           {/* Mascot + badge */}
           <div className="flex flex-col items-center gap-2">
@@ -106,7 +106,7 @@ export default async function Page() {
         </div>
 
         {/* Bottom — social proof + legal links */}
-        <div className="flex flex-col items-center gap-2.5 mt-4">
+        <div className="flex flex-col items-center gap-1.5">
           <div
             className="flex items-center gap-2 px-4 py-1.5 rounded-full"
             style={{ background: 'rgba(238,250,122,0.12)', border: '1px solid rgba(238,250,122,0.2)' }}
