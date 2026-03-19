@@ -126,6 +126,10 @@ export default async function Page() {
         <a href="/terminos" className="underline hover:text-white/40 transition-colors">
           Términos
         </a>
+        <span>·</span>
+        <a href="/eliminar-cuenta" className="underline hover:text-white/40 transition-colors">
+          Eliminar cuenta
+        </a>
       </div>
     </main>
   )
