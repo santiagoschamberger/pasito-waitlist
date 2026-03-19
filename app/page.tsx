@@ -1,8 +1,19 @@
 import Image from 'next/image'
 import { Footprints, Gift, MapPin } from 'lucide-react'
 import { WaitlistForm } from './WaitlistForm'
+import { createClient } from '@supabase/supabase-js'
 
-export default function Page() {
+export const revalidate = 60
+
+export default async function Page() {
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  )
+  const { count } = await supabase
+    .from('waitlist')
+    .select('*', { count: 'exact', head: true })
+  const totalPersonas = 200 + (count ?? 0)
   return (
     <main
       className="min-h-screen flex flex-col overflow-y-auto"
@@ -95,10 +106,14 @@ export default function Page() {
         </div>
 
         {/* Bottom — social proof + legal links */}
-        <div className="flex flex-col items-center gap-1.5 mt-4">
-          <p className="text-[11px] text-center" style={{ color: 'rgba(255,255,255,0.3)' }}>
-            +200 personas ya anotadas · Beta en CABA
-          </p>
+        <div className="flex flex-col items-center gap-2.5 mt-4">
+          <div
+            className="flex items-center gap-2 px-4 py-1.5 rounded-full"
+            style={{ background: 'rgba(238,250,122,0.12)', border: '1px solid rgba(238,250,122,0.2)' }}
+          >
+            <span className="text-sm font-bold" style={{ color: '#EEFA7A' }}>+{totalPersonas}</span>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.6)' }}>personas ya se sumaron</span>
+          </div>
           <div className="flex flex-wrap justify-center gap-x-3 gap-y-1 text-[10px]" style={{ color: 'rgba(255,255,255,0.25)' }}>
             <a href="/contacto" className="underline hover:text-white/40 transition-colors">
               Contacto
