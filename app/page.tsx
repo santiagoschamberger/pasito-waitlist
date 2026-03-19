@@ -67,7 +67,7 @@ export default async function Page() {
           </div>
 
           {/* Headline */}
-          <div className="space-y-1">
+          <div className="space-y-2">
             <h1
               className="text-[26px] leading-tight font-display"
               style={{ color: '#EEFA7A' }}
@@ -80,7 +80,7 @@ export default async function Page() {
           </div>
 
           {/* 3 quick pills */}
-          <div className="flex flex-wrap justify-center gap-1.5">
+          <div className="flex flex-wrap justify-center gap-1.5 mt-1">
             {[
               { icon: Footprints, text: 'Caminás' },
               { icon: Gift,       text: 'Ganás pasitos' },
@@ -99,9 +99,6 @@ export default async function Page() {
 
           {/* Waitlist form */}
           <div className="w-full pt-1">
-            <p className="text-[10px] font-semibold mb-1.5 tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.4)' }}>
-              Anotate — sé el primero en saber
-            </p>
             <WaitlistForm />
           </div>
 
