@@ -16,20 +16,19 @@ export default async function Page() {
   const totalPersonas = 200 + (count ?? 0)
   return (
     <main
-      className="min-h-screen flex flex-col overflow-y-auto"
+      className="h-[100dvh] flex flex-col overflow-hidden"
       style={{ background: 'linear-gradient(160deg, #0C6B45 0%, #084d32 100%)' }}
     >
       <div
-        className="fixed inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage:
             'radial-gradient(circle at 15% 85%, rgba(238,250,122,0.08) 0%, transparent 50%), radial-gradient(circle at 85% 10%, rgba(238,250,122,0.06) 0%, transparent 45%)',
         }}
       />
 
-      <div className="relative flex-1 flex flex-col items-center justify-center px-5 py-4 gap-4">
-
-        {/* Logo — pinned to top */}
+      {/* Logo — top */}
+      <div className="relative shrink-0 flex justify-center pt-[max(env(safe-area-inset-top),12px)] pb-2">
         <Image
           src="/pasitohorizontal.png"
           alt="Pasito"
@@ -38,20 +37,23 @@ export default async function Page() {
           priority
           className="brightness-0 invert"
         />
+      </div>
 
+      {/* Center content — fills available space */}
+      <div className="relative flex-1 flex flex-col items-center justify-center px-5 min-h-0">
         <div className="w-full max-w-sm flex flex-col items-center text-center gap-2.5">
 
           {/* Mascot + badge */}
-          <div className="flex flex-col items-center gap-2">
+          <div className="flex flex-col items-center gap-1.5">
             <div
-              className="w-16 h-16 rounded-full flex items-center justify-center"
+              className="w-14 h-14 rounded-full flex items-center justify-center"
               style={{ background: 'rgba(238,250,122,0.12)' }}
             >
               <Image
                 src="/paloma-main.png"
                 alt=""
-                width={56}
-                height={56}
+                width={48}
+                height={48}
                 className="drop-shadow-lg"
                 aria-hidden
               />
@@ -65,15 +67,15 @@ export default async function Page() {
           </div>
 
           {/* Headline */}
-          <div className="space-y-1.5">
+          <div className="space-y-1">
             <h1
-              className="text-[28px] leading-tight font-display"
+              className="text-[26px] leading-tight font-display"
               style={{ color: '#EEFA7A' }}
             >
               Caminá y ganá premios
             </h1>
-            <p className="text-sm leading-snug" style={{ color: 'rgba(255,255,255,0.65)' }}>
-              Pasito convierte tus pasos en descuentos y regalos en comercios cerca tuyo. La app que te premia por adquirir hábitos saludables.
+            <p className="text-[13px] leading-snug" style={{ color: 'rgba(255,255,255,0.65)' }}>
+              Pasito convierte tus pasos en descuentos y regalos en comercios cerca tuyo.
             </p>
           </div>
 
@@ -96,38 +98,37 @@ export default async function Page() {
           </div>
 
           {/* Waitlist form */}
-          <div className="w-full">
-            <p className="text-[10px] font-semibold mb-2 tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.4)' }}>
+          <div className="w-full pt-1">
+            <p className="text-[10px] font-semibold mb-1.5 tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.4)' }}>
               Anotate — sé el primero en saber
             </p>
             <WaitlistForm />
           </div>
 
-        </div>
-
-        {/* Bottom — social proof + legal links */}
-        <div className="flex flex-col items-center gap-1.5">
+          {/* Social proof */}
           <div
-            className="flex items-center gap-2 px-4 py-1.5 rounded-full"
+            className="flex items-center gap-2 px-4 py-1.5 rounded-full mt-1"
             style={{ background: 'rgba(238,250,122,0.12)', border: '1px solid rgba(238,250,122,0.2)' }}
           >
             <span className="text-sm font-bold" style={{ color: '#EEFA7A' }}>+{totalPersonas}</span>
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.6)' }}>personas ya se sumaron</span>
           </div>
-          <div className="flex flex-wrap justify-center gap-x-3 gap-y-1 text-[10px]" style={{ color: 'rgba(255,255,255,0.25)' }}>
-            <a href="/contacto" className="underline hover:text-white/40 transition-colors">
-              Contacto
-            </a>
-            <span className="hidden sm:inline">·</span>
-            <a href="/privacidad" className="underline hover:text-white/40 transition-colors">
-              Privacidad
-            </a>
-            <span className="hidden sm:inline">·</span>
-            <a href="/terminos" className="underline hover:text-white/40 transition-colors">
-              Términos
-            </a>
-          </div>
         </div>
+      </div>
+
+      {/* Footer — bottom */}
+      <div className="relative shrink-0 flex flex-wrap justify-center gap-x-3 gap-y-1 text-[10px] pb-[max(env(safe-area-inset-bottom),12px)] pt-2" style={{ color: 'rgba(255,255,255,0.25)' }}>
+        <a href="/contacto" className="underline hover:text-white/40 transition-colors">
+          Contacto
+        </a>
+        <span>·</span>
+        <a href="/privacidad" className="underline hover:text-white/40 transition-colors">
+          Privacidad
+        </a>
+        <span>·</span>
+        <a href="/terminos" className="underline hover:text-white/40 transition-colors">
+          Términos
+        </a>
       </div>
     </main>
   )

@@ -18,16 +18,13 @@
     margin: 0;
     padding: 0;
   }
-  html {
+  html, body {
     height: 100%;
-  }
-  body {
-    min-height: 100%;
+    overflow: hidden;
     font-family: var(--font-poppins), system-ui, sans-serif;
     background: #0C6B45;
     color: #fff;
     -webkit-font-smoothing: antialiased;
-    padding-bottom: env(safe-area-inset-bottom);
   }
   .font-display {
     font-family: var(--font-paytone), system-ui, sans-serif;
