@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { revalidatePath } from 'next/cache'
 import { createClient } from '@supabase/supabase-js'
 
 const supabase = createClient(
@@ -33,5 +34,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'No se pudo guardar. Intentá de nuevo.' }, { status: 500 })
   }
 
+  revalidatePath('/')
   return NextResponse.json({ ok: true })
 }

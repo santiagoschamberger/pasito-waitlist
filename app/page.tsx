@@ -3,7 +3,7 @@ import { Footprints, Gift, MapPin } from 'lucide-react'
 import { WaitlistForm } from './WaitlistForm'
 import { createClient } from '@supabase/supabase-js'
 
-export const revalidate = 60
+export const revalidate = 0
 
 export default async function Page() {
   const supabase = createClient(
