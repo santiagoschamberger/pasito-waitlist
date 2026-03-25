@@ -30,7 +30,7 @@ export default function PrivacidadPage() {
           Política de Privacidad
         </h1>
         <p className="text-gray-600 mb-12">
-          Versión 1.0 · Vigente desde el 15 de marzo de 2026
+          Versión 1.1 · Vigente desde el 25 de marzo de 2026
         </p>
 
         <div className="prose prose-lg max-w-none space-y-8">

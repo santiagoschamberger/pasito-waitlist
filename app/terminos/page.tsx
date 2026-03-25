@@ -30,7 +30,7 @@ export default function TerminosPage() {
           Términos y Condiciones
         </h1>
         <p className="text-gray-600 mb-12">
-          Versión 1.0 · Vigente desde el 15 de marzo de 2026
+          Versión 1.1 · Vigente desde el 25 de marzo de 2026
         </p>
 
         <div className="prose prose-lg max-w-none space-y-8">
@@ -89,8 +89,8 @@ export default function TerminosPage() {
             </h3>
             <ul className="list-disc pl-6 space-y-2 text-gray-700">
               <li><strong>Conversión:</strong> 1.000 pasos = 1 Pasito (sin umbral mínimo)</li>
-              <li><strong>Tope diario:</strong> Máximo 10 Pasitos por día (equivalente a 10.000 pasos)</li>
-              <li><strong>Sincronización:</strong> Al abrir la Aplicación o con pull-to-refresh (no sincronización en segundo plano)</li>
+              <li><strong>Tope diario:</strong> Máximo 15 Pasitos por día (equivalente a 15.000 pasos). Los pasos que excedan este límite no generan Pasitos adicionales.</li>
+              <li><strong>Sincronización:</strong> Automática cada 30 segundos mientras la app está activa</li>
               <li><strong>Fuente de datos:</strong> Apple HealthKit (iOS) o Google Health Connect (Android), solo lectura</li>
               <li><strong>Retroactividad:</strong> No se otorgan Pasitos por pasos de días anteriores que no hayan sido sincronizados</li>
             </ul>
@@ -108,8 +108,11 @@ export default function TerminosPage() {
             <h3 className="text-xl font-semibold mb-3 mt-6" style={{ color: '#0C6B45' }}>
               4.3 Expiración de Pasitos
             </h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Los Pasitos acumulados vencen a los 60 (sesenta) días corridos desde la fecha en que fueron ganados. Una vez vencidos, los Pasitos se eliminan automáticamente del saldo del usuario y no pueden ser recuperados ni reclamados.
+            </p>
             <p className="text-gray-700 leading-relaxed">
-              En el MVP actual, los Pasitos acumulados no tienen fecha de expiración mientras la cuenta esté activa. Pasito se reserva el derecho de introducir una política de expiración en versiones futuras, con notificación previa a los usuarios.
+              Pasito se reserva el derecho de modificar el plazo de expiración con notificación previa de 15 días corridos a los usuarios.
             </p>
 
             <h3 className="text-xl font-semibold mb-3 mt-6" style={{ color: '#0C6B45' }}>
@@ -141,8 +144,8 @@ export default function TerminosPage() {
               5.2 Límites del canje
             </h3>
             <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li><strong>Límite por local:</strong> 1 canje por día por comercio</li>
-              <li><strong>Precios de los premios:</strong> Variable según el premio</li>
+              <li><strong>Límite por local:</strong> 1 canje cada 15 (quince) días corridos por comercio. Es decir, si canjeás un premio en un comercio hoy, podrás volver a canjear cualquier premio en ese mismo comercio recién dentro de 15 días.</li>
+              <li><strong>Valor de referencia:</strong> 1 Pasito = $100 (cien pesos argentinos). El precio en Pasitos de cada premio se calcula dividiendo el precio de venta al público por $100.</li>
               <li><strong>Validación:</strong> El PIN del comercio debe ser correcto para completar el canje</li>
             </ul>
 
