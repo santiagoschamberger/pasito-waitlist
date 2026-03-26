@@ -85,6 +85,15 @@ export async function POST(req: NextRequest) {
       subject: 'Confirmá tu lugar en la familia Pasito',
       html: waitlistConfirmationHtml(email),
     }).catch((err) => console.error('[email] Waitlist confirmation error:', err))
+
+    // Add to Resend "Waitlist" audience
+    const waitlistAudienceId = process.env.RESEND_AUDIENCE_ID_WAITLIST
+    if (waitlistAudienceId) {
+      resend.contacts.create({
+        audienceId: waitlistAudienceId,
+        email,
+      }).catch((err) => console.error('[resend] Failed to add waitlist contact:', err))
+    }
   }
 
   revalidatePath('/')
