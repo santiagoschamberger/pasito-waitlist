@@ -51,27 +51,6 @@ function waitlistConfirmationHtml(email: string): string {
 </html>`
 }
 
-function adminNotificationHtml(email: string): string {
-  return `
-<!DOCTYPE html>
-<html>
-<head><meta charset="utf-8" /></head>
-<body style="margin: 0; padding: 0; background: #fafafa;">
-  <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 520px; margin: 0 auto; padding: 48px 28px; background: #ffffff;">
-    <div style="text-align: center; margin-bottom: 40px;">
-      <img src="https://pasito.app/pasitohorizontal.png" alt="Pasito" width="100" style="display: inline-block;" />
-    </div>
-    <p style="font-size: 13px; color: #999; margin: 0 0 6px; text-transform: uppercase; letter-spacing: 0.08em;">Waitlist</p>
-    <h2 style="font-size: 18px; color: #111; margin: 0 0 8px; font-weight: 600;">Nuevo registro</h2>
-    <p style="font-size: 14px; color: #555; margin: 0;">${email}</p>
-    <div style="margin-top: 48px; text-align: center;">
-      <p style="font-size: 11px; color: #bbb; margin: 0; letter-spacing: 0.03em;">pasito.app</p>
-    </div>
-  </div>
-</body>
-</html>`
-}
-
 export async function POST(req: NextRequest) {
   let email: string
 
@@ -98,23 +77,14 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'No se pudo guardar. Intentá de nuevo.' }, { status: 500 })
   }
 
-  // Send confirmation email to user + notify admin (fire-and-forget)
   if (process.env.RESEND_API_KEY) {
     const resend = getResend()
-    Promise.all([
-      resend.emails.send({
-        from: 'Pasito <noreply@pasito.app>',
-        to: email,
-        subject: 'Confirmá tu lugar en la familia Pasito',
-        html: waitlistConfirmationHtml(email),
-      }),
-      resend.emails.send({
-        from: 'Pasito <noreply@pasito.app>',
-        to: 'hola@pasito.app',
-        subject: `Waitlist: ${email}`,
-        html: adminNotificationHtml(email),
-      }),
-    ]).catch((err) => console.error('[email] Waitlist notification error:', err))
+    resend.emails.send({
+      from: 'Pasito <noreply@pasito.app>',
+      to: email,
+      subject: 'Confirmá tu lugar en la familia Pasito',
+      html: waitlistConfirmationHtml(email),
+    }).catch((err) => console.error('[email] Waitlist confirmation error:', err))
   }
 
   revalidatePath('/')
