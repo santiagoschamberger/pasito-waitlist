@@ -55,7 +55,7 @@ export default function PrivacidadPage() {
             </h2>
             <ul className="list-none space-y-2 text-gray-700">
               <li><strong>Responsable:</strong> Santiago Schamberger</li>
-              <li><strong>Domicilio:</strong> Cerviño 3527, Piso 7, CP 1425, CABA, Argentina</li>
+              <li><strong>Domicilio:</strong> Ciudad Autónoma de Buenos Aires, Argentina</li>
               <li><strong>Correo electrónico:</strong> <a href="mailto:contacto@pasito.app" className="font-semibold" style={{ color: '#0C6B45' }}>contacto@pasito.app</a></li>
               <li><strong>Aplicación:</strong> Pasito – Move to Earn</li>
               <li><strong>Sitio web / App:</strong> pasito.app</li>
