@@ -1,7 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
-import { Apple, Copy } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
 
 type Platform = 'ios' | 'android' | 'desktop'
 
@@ -13,6 +12,9 @@ type Props = {
 }
 
 const APP_BUNDLE_ID = 'ar.pasito.pasito'
+// How long iOS waits for the app to take focus before sending the user to the
+// App Store. Tuned so the iOS confirm dialog has time to appear.
+const IOS_FALLBACK_MS = 1800
 
 function detectPlatform(): Platform {
   if (typeof navigator === 'undefined') return 'desktop'
@@ -20,7 +22,7 @@ function detectPlatform(): Platform {
 
   if (/android/i.test(ua)) return 'android'
   if (/iPad|iPhone|iPod/.test(ua)) return 'ios'
-  // iPadOS 13+ pretends to be desktop Mac, detect by touch capability
+  // iPadOS 13+ pretends to be desktop Mac; fall back to the touch heuristic.
   if (
     typeof window !== 'undefined' &&
     /Macintosh/.test(ua) &&
@@ -32,12 +34,12 @@ function detectPlatform(): Platform {
 }
 
 function buildAndroidIntentUrl(token: string, fallback: string): string {
-  // Chrome on Android handles intent:// URLs natively. If the app is installed
-  // and verified via assetlinks.json, it opens directly. Otherwise it falls
-  // back to the URL given via S.browser_fallback_url.
+  // Chrome on Android handles intent:// natively. If the app is installed and
+  // the assetlinks fingerprint matches, it auto-opens. Otherwise Chrome
+  // navigates to S.browser_fallback_url (the Play Store URL).
   const path = `/g/${encodeURIComponent(token)}`
   const params = [
-    `scheme=https`,
+    'scheme=https',
     `package=${APP_BUNDLE_ID}`,
     `S.browser_fallback_url=${encodeURIComponent(fallback)}`,
     'end',
@@ -51,66 +53,48 @@ export default function InviteRedirect({
   appStoreUrl,
   playStoreUrl,
 }: Props) {
-  const [platform, setPlatform] = useState<Platform>('desktop')
+  const [platform, setPlatform] = useState<Platform | null>(null)
+  const [stage, setStage] = useState<'redirecting' | 'desktop'>('redirecting')
   const [copied, setCopied] = useState(false)
-  const [opening, setOpening] = useState(false)
+  const startedRef = useRef(false)
 
   useEffect(() => {
-    setPlatform(detectPlatform())
-  }, [])
+    if (startedRef.current) return
+    startedRef.current = true
 
-  const customSchemeUrl = useMemo(
-    () => `${APP_BUNDLE_ID}://g/${encodeURIComponent(token)}`,
-    [token],
-  )
+    const detected = detectPlatform()
+    setPlatform(detected)
 
-  const openApp = () => {
-    if (opening) return
-    setOpening(true)
-
-    if (platform === 'android') {
-      // Chrome handles intent:// natively with browser_fallback_url to Play.
-      window.location.href = buildAndroidIntentUrl(token, playStoreUrl)
-      setTimeout(() => setOpening(false), 2500)
+    if (detected === 'android') {
+      // intent:// URL covers both branches (open app or go to Play Store).
+      window.location.replace(buildAndroidIntentUrl(token, playStoreUrl))
       return
     }
 
-    if (platform === 'ios') {
-      // Try the custom scheme first; if the app is installed it opens.
-      // If after a short timeout the page is still visible, the app is not
-      // installed (or not registered for this scheme), so fall back to App
-      // Store. Using an iframe avoids Safari showing an error toast when the
-      // scheme has no handler.
-      const start = Date.now()
-      const iframe = document.createElement('iframe')
-      iframe.style.display = 'none'
-      iframe.src = customSchemeUrl
-      document.body.appendChild(iframe)
-
-      const timer = window.setTimeout(() => {
-        iframe.remove()
-        if (Date.now() - start < 2200 && document.visibilityState === 'visible') {
-          window.location.href = appStoreUrl
+    if (detected === 'ios') {
+      const customSchemeUrl = `${APP_BUNDLE_ID}://g/${encodeURIComponent(token)}`
+      const fallbackTimer = window.setTimeout(() => {
+        if (document.visibilityState === 'visible') {
+          window.location.replace(appStoreUrl)
         }
-        setOpening(false)
-      }, 1500)
+      }, IOS_FALLBACK_MS)
 
       const onHidden = () => {
         if (document.visibilityState === 'hidden') {
-          window.clearTimeout(timer)
-          iframe.remove()
-          setOpening(false)
+          window.clearTimeout(fallbackTimer)
           document.removeEventListener('visibilitychange', onHidden)
         }
       }
       document.addEventListener('visibilitychange', onHidden)
+
+      // Trigger the custom scheme. iOS will open the app if installed; if not,
+      // the page stays visible and the timer above falls back to the store.
+      window.location.href = customSchemeUrl
       return
     }
 
-    // Desktop: just copy the link so they can send it to their phone.
-    void copyLink()
-    setOpening(false)
-  }
+    setStage('desktop')
+  }, [token, appStoreUrl, playStoreUrl])
 
   const copyLink = async () => {
     try {
@@ -118,73 +102,65 @@ export default function InviteRedirect({
       setCopied(true)
       window.setTimeout(() => setCopied(false), 2000)
     } catch {
-      // ignore — clipboard may be blocked, the link is already shown on screen
+      // ignore — user can still copy from the address bar
     }
   }
 
-  const primaryLabel =
-    platform === 'desktop'
-      ? copied
-        ? '¡Link copiado!'
-        : 'Copiar link'
-      : opening
-        ? 'Abriendo Pasito…'
-        : 'Abrir Pasito'
-
-  const showAppStore = platform === 'ios' || platform === 'desktop'
-  const showPlayStore = platform === 'android' || platform === 'desktop'
-
-  return (
-    <div className="grid gap-3">
-      <button
-        type="button"
-        onClick={openApp}
-        className="h-12 rounded-full flex items-center justify-center text-sm font-bold transition-opacity active:opacity-80"
-        style={{ background: '#EEFA7A', color: '#0C6B45' }}
-      >
-        {primaryLabel}
-      </button>
-
-      <div
-        className={
-          showAppStore && showPlayStore ? 'grid grid-cols-2 gap-3' : 'grid gap-3'
-        }
-      >
-        {showAppStore ? (
+  if (stage === 'desktop') {
+    return (
+      <div className="grid gap-3 text-center">
+        <p className="text-sm" style={{ color: 'rgba(255,255,255,0.86)' }}>
+          Abrí este link desde tu teléfono para sumarte al grupo.
+        </p>
+        <div className="grid grid-cols-2 gap-3">
           <a
             href={appStoreUrl}
-            className="h-11 rounded-full flex items-center justify-center gap-2 text-xs font-semibold"
-            style={{ background: '#0C6B45', color: '#FFFFFF' }}
+            className="h-11 rounded-full flex items-center justify-center text-xs font-semibold"
+            style={{ background: '#EEFA7A', color: '#0C6B45' }}
           >
-            <Apple size={16} />
             App Store
           </a>
-        ) : null}
-        {showPlayStore ? (
           <a
             href={playStoreUrl}
             className="h-11 rounded-full flex items-center justify-center text-xs font-semibold"
-            style={{ background: '#0C6B45', color: '#FFFFFF' }}
+            style={{ background: '#EEFA7A', color: '#0C6B45' }}
           >
             Google Play
           </a>
-        ) : null}
-      </div>
-
-      {platform === 'desktop' ? (
+        </div>
         <button
           type="button"
           onClick={copyLink}
-          className="h-10 rounded-full flex items-center justify-center gap-2 text-xs font-semibold border"
+          className="h-10 rounded-full flex items-center justify-center text-xs font-semibold"
           style={{
-            background: 'rgba(12,107,69,0.06)',
-            color: '#0C6B45',
-            borderColor: 'rgba(12,107,69,0.18)',
+            background: 'rgba(255,255,255,0.12)',
+            color: '#FFFFFF',
+            border: '1px solid rgba(255,255,255,0.22)',
           }}
         >
-          <Copy size={14} />
           {copied ? '¡Link copiado!' : 'Copiar link de invitación'}
         </button>
+      </div>
+    )
+  }
+
+  return (
+    <div className="grid place-items-center gap-4">
+      <span
+        aria-hidden
+        className="block h-10 w-10 rounded-full border-2 border-white/30 border-t-white animate-spin"
+      />
+      <p className="text-sm" style={{ color: 'rgba(255,255,255,0.85)' }}>
+        Abriendo Pasito…
+      </p>
+      {platform === 'ios' ? (
+        <a
+          href={appStoreUrl}
+          className="text-xs font-semibold underline"
+          style={{ color: 'rgba(255,255,255,0.85)' }}
+        >
+          ¿No se abrió? Bajá la app
+        </a>
       ) : null}
     </div>
   )

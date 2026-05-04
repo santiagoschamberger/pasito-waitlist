@@ -5,7 +5,8 @@
       "namespace": "android_app",
       "package_name": "ar.pasito.pasito",
       "sha256_cert_fingerprints": [
-        "64:AD:5C:C3:12:26:AA:B5:77:93:60:CA:5E:0A:9E:9B:11:FD:91:FA:30:A1:D9:63:0F:A8:38:03:3A:AA:73:21"
+        "64:AD:5C:C3:12:26:AA:B5:77:93:60:CA:5E:0A:9E:9B:11:FD:91:FA:30:A1:D9:63:0F:A8:38:03:3A:AA:73:21",
+        "64:8C:C7:91:A2:64:92:D4:4B:CD:CB:06:DA:8D:74:E2:A2:34:BA:FC:B4:A5:5F:2B:A7:7A:CB:CB:AC:5F:B5:DF"
       ]
     }
   }
