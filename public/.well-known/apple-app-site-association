@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["U8G7MYY9X8.ar.pasito.pasito"],
+        "components": [
+          {
+            "/": "/g/*",
+            "comment": "Friend group invite links"
+          }
+        ]
+      }
+    ]
+  }
+}
