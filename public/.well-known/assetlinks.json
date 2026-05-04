@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "ar.pasito.pasito",
+      "sha256_cert_fingerprints": [
+        "64:AD:5C:C3:12:26:AA:B5:77:93:60:CA:5E:0A:9E:9B:11:FD:91:FA:30:A1:D9:63:0F:A8:38:03:3A:AA:73:21"
+      ]
+    }
+  }
+]
