@@ -200,9 +200,9 @@ export function AmbassadorLeadForm() {
         <Field
           icon={MapPin}
           id="location"
-          label="Barrio / provincia"
+          label="¿En dónde te gustaría representar a Pasito?"
           value={form.location}
-          placeholder="Palermo, CABA"
+          placeholder="Tu barrio, ciudad o zona"
           autoComplete="address-level2"
           onChange={updateField}
         />

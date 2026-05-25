@@ -48,7 +48,7 @@ function leadHtml(lead: AmbassadorLead) {
   const rows = [
     ['Nombre y apellido', lead.fullName],
     ['Instagram', lead.instagram],
-    ['Barrio / provincia', lead.location],
+    ['Dónde quiere representar a Pasito', lead.location],
     ['Mail', lead.email],
     ['WhatsApp', lead.whatsapp],
     ['Por qué te gusta Pasito', lead.pasitoReason],
@@ -158,7 +158,7 @@ export async function POST(req: NextRequest) {
           'Nuevo lead de Embajador Pasito',
           `Nombre y apellido: ${lead.fullName}`,
           `Instagram: ${lead.instagram}`,
-          `Barrio / provincia: ${lead.location}`,
+          `Dónde quiere representar a Pasito: ${lead.location}`,
           `Mail: ${lead.email}`,
           `WhatsApp: ${lead.whatsapp}`,
           `Por qué te gusta Pasito: ${lead.pasitoReason}`,
