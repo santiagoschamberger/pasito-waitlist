@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { ArrowRight, AtSign, CheckCircle2, Loader2, Mail, MapPin, Phone, UserRound, type LucideIcon } from 'lucide-react'
+import { ArrowRight, AtSign, CheckCircle2, Loader2, Mail, MapPin, MessageSquareText, Phone, UserRound, type LucideIcon } from 'lucide-react'
 
 type FormState = {
   fullName: string
@@ -9,6 +9,7 @@ type FormState = {
   location: string
   email: string
   whatsapp: string
+  pasitoReason: string
 }
 
 const INITIAL_FORM: FormState = {
@@ -17,6 +18,7 @@ const INITIAL_FORM: FormState = {
   location: '',
   email: '',
   whatsapp: '',
+  pasitoReason: '',
 }
 
 function Field({
@@ -55,7 +57,43 @@ function Field({
           autoComplete={autoComplete}
           inputMode={inputMode}
           onChange={(event) => onChange(id, event.target.value)}
-          className="h-12 w-full rounded-md border border-[#442920]/15 bg-white pl-11 pr-3 text-base text-[#442920] outline-none transition focus:border-[#0C6B45] focus:ring-2 focus:ring-[#EEFA7A]"
+          className="h-11 w-full rounded-md border border-[#442920]/15 bg-white pl-11 pr-3 text-base text-[#442920] outline-none transition focus:border-[#0C6B45] focus:ring-2 focus:ring-[#EEFA7A]"
+        />
+      </span>
+    </label>
+  )
+}
+
+function TextAreaField({
+  icon: Icon,
+  id,
+  label,
+  value,
+  placeholder,
+  onChange,
+}: {
+  icon: LucideIcon
+  id: keyof FormState
+  label: string
+  value: string
+  placeholder: string
+  onChange: (field: keyof FormState, value: string) => void
+}) {
+  return (
+    <label htmlFor={id} className="block">
+      <span className="mb-2 block text-sm font-semibold text-[#442920]">{label}</span>
+      <span className="relative block">
+        <Icon className="pointer-events-none absolute left-3 top-3.5 h-5 w-5 text-[#0C6B45]/65" />
+        <textarea
+          id={id}
+          name={id}
+          required
+          value={value}
+          placeholder={placeholder}
+          maxLength={600}
+          rows={3}
+          onChange={(event) => onChange(id, event.target.value)}
+          className="min-h-24 w-full resize-none rounded-md border border-[#442920]/15 bg-white py-3 pl-11 pr-3 text-base text-[#442920] outline-none transition focus:border-[#0C6B45] focus:ring-2 focus:ring-[#EEFA7A]"
         />
       </span>
     </label>
@@ -87,6 +125,7 @@ export function AmbassadorLeadForm() {
           fullName: form.fullName.trim(),
           location: form.location.trim(),
           whatsapp: form.whatsapp.trim(),
+          pasitoReason: form.pasitoReason.trim(),
         }),
       })
 
@@ -131,15 +170,15 @@ export function AmbassadorLeadForm() {
     <form
       id="formulario"
       onSubmit={handleSubmit}
-      className="rounded-lg border border-[#EEFA7A]/35 bg-[#FBF8E8] p-5 text-[#442920] shadow-[0_18px_60px_rgba(0,0,0,0.22)] sm:p-6"
+      className="rounded-lg border border-[#EEFA7A]/35 bg-[#FBF8E8] p-4 text-[#442920] shadow-[0_18px_60px_rgba(0,0,0,0.22)] sm:p-5"
     >
-      <div className="border-b border-[#442920]/10 pb-5">
+      <div className="border-b border-[#442920]/10 pb-4">
         <h2 className="font-display text-3xl leading-tight text-[#442920]">
           Postulate como embajador <span className="text-[#0C6B45]">PASITO</span>
         </h2>
       </div>
 
-      <div className="mt-5 grid gap-4">
+      <div className="mt-4 grid gap-3">
         <Field
           icon={UserRound}
           id="fullName"
@@ -190,6 +229,14 @@ export function AmbassadorLeadForm() {
             onChange={updateField}
           />
         </div>
+        <TextAreaField
+          icon={MessageSquareText}
+          id="pasitoReason"
+          label="¿Por qué te gusta Pasito?"
+          value={form.pasitoReason}
+          placeholder="Contanos qué te conecta con Pasito"
+          onChange={updateField}
+        />
       </div>
 
       {status === 'error' && (
@@ -199,7 +246,7 @@ export function AmbassadorLeadForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="mt-5 inline-flex h-13 w-full items-center justify-center gap-2 rounded-full bg-[#0C6B45] px-6 text-base font-bold text-[#EEFA7A] transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100"
+        className="mt-4 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#0C6B45] px-6 text-base font-bold text-[#EEFA7A] transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100"
       >
         {status === 'loading' ? (
           <>
@@ -214,7 +261,7 @@ export function AmbassadorLeadForm() {
         )}
       </button>
 
-      <p className="mt-3 text-center text-xs leading-5 text-[#442920]/50">
+      <p className="mt-2 text-center text-xs leading-5 text-[#442920]/50">
         Usamos estos datos solo para contactarte por el programa de Embajadores Pasito.
       </p>
     </form>

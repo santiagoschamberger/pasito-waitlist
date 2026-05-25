@@ -7,6 +7,7 @@ type AmbassadorLead = {
   location: string
   email: string
   whatsapp: string
+  pasitoReason: string
 }
 
 let supabase: SupabaseClient | null = null
@@ -50,6 +51,7 @@ function leadHtml(lead: AmbassadorLead) {
     ['Barrio / provincia', lead.location],
     ['Mail', lead.email],
     ['WhatsApp', lead.whatsapp],
+    ['Por qué te gusta Pasito', lead.pasitoReason],
   ]
 
   return `
@@ -90,9 +92,10 @@ export async function POST(req: NextRequest) {
     location: readString(body, 'location'),
     email: readString(body, 'email').toLowerCase(),
     whatsapp: readString(body, 'whatsapp'),
+    pasitoReason: readString(body, 'pasitoReason'),
   }
 
-  if (!lead.fullName || !lead.instagram || !lead.location || !lead.email || !lead.whatsapp) {
+  if (!lead.fullName || !lead.instagram || !lead.location || !lead.email || !lead.whatsapp || !lead.pasitoReason) {
     return NextResponse.json({ error: 'Completá todos los campos.' }, { status: 400 })
   }
 
@@ -102,6 +105,10 @@ export async function POST(req: NextRequest) {
 
   if (lead.whatsapp.replace(/\D/g, '').length < 8) {
     return NextResponse.json({ error: 'WhatsApp inválido.' }, { status: 400 })
+  }
+
+  if (lead.pasitoReason.length > 600) {
+    return NextResponse.json({ error: 'La respuesta es demasiado larga.' }, { status: 400 })
   }
 
   const supabaseClient = getSupabase()
@@ -119,6 +126,7 @@ export async function POST(req: NextRequest) {
       location: lead.location,
       email: lead.email,
       whatsapp: lead.whatsapp,
+      pasito_reason: lead.pasitoReason,
       user_agent: req.headers.get('user-agent'),
     })
 
@@ -153,6 +161,7 @@ export async function POST(req: NextRequest) {
           `Barrio / provincia: ${lead.location}`,
           `Mail: ${lead.email}`,
           `WhatsApp: ${lead.whatsapp}`,
+          `Por qué te gusta Pasito: ${lead.pasitoReason}`,
         ].join('\n'),
       }),
     })

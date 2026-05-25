@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   description: 'Convertite en Embajador Pasito, invitá locales con tu link personal y ganá cuando se activan y generan canjes reales.',
   openGraph: {
     title: 'Embajadores Pasito - Ganá por sumar comercios',
-    description: 'Invitá comercios a Pasito con tu link personal y ganá plata, Pasitos, merch y acceso a eventos.',
+    description: 'Invitá comercios a Pasito con tu link personal y desbloqueá Pasitos, merch, eventos y beneficios.',
     type: 'website',
   },
 }
@@ -76,21 +76,21 @@ const FLOW = [
     step: '05',
     icon: Trophy,
     title: 'Ganás por canjes',
-    body: 'Cobrás cuando el local empieza a generar movimiento real dentro de Pasito.',
+    body: 'Desbloqueás recompensas cuando el local empieza a generar movimiento real dentro de Pasito.',
   },
 ]
 
-const EARNINGS = [
+const REWARD_MILESTONES = [
   {
-    label: 'Local estándar',
-    cash: 'hasta $30.000',
-    pasitos: '+ 200 Pasitos',
+    label: 'Local activo',
+    title: 'Pasitos y beneficios',
+    body: 'Sumás recompensas cuando el comercio queda validado, activo y empieza a recibir usuarios.',
     tone: 'yellow',
   },
   {
-    label: 'Local con 3+ sucursales',
-    cash: 'hasta $40.000',
-    pasitos: '+ 300 Pasitos',
+    label: 'Comercio con movimiento',
+    title: 'Bonus por canjes reales',
+    body: 'El hito fuerte aparece cuando el local alcanza canjes reales y muestra tracción dentro de Pasito.',
     tone: 'green',
   },
 ]
@@ -136,7 +136,7 @@ const DASHBOARD_ITEMS = [
   'Locales activos',
   'Canjes generados',
   'Pasitos ganados',
-  'Dinero acumulado',
+  'Recompensas acumuladas',
   'Ranking mensual',
 ]
 
@@ -158,7 +158,7 @@ const FAQS = [
     answer: 'El comercio tiene que ofrecer un premio gratis real para usuarios de Pasito. Puede ser un producto, beneficio o experiencia, con stock y condiciones claras.',
   },
   {
-    question: '¿Me pagan por pasar contactos?',
+    question: '¿Cuenta pasar contactos?',
     answer: 'No. Para que cuente, el comercio tiene que registrarse usando tu link personal y ser validado por Pasito.',
   },
   {
@@ -178,15 +178,15 @@ const FAQS = [
     answer: 'Significa que el comercio fue aprobado, tiene su premio cargado, stock disponible, horarios definidos y puede recibir canjes de usuarios.',
   },
   {
-    question: '¿Cuándo cobro por un local estándar?',
-    answer: 'Por un local estándar podés ganar hasta $30.000 + 200 Pasitos: una parte cuando se activa, otra cuando llega a 10 canjes reales y otra si sigue activo 30 días después.',
+    question: '¿Cuándo recibo recompensas por un local?',
+    answer: 'Las recompensas se liberan por hitos: cuando el comercio se activa, cuando llega a 10 canjes reales y cuando sostiene actividad dentro de Pasito.',
   },
   {
-    question: '¿Cuándo cobro por un local con 3 o más sucursales?',
-    answer: 'Por un comercio con 3 o más sucursales podés ganar hasta $40.000 + 300 Pasitos, siguiendo el mismo sistema: activación, canjes reales y permanencia.',
+    question: '¿Qué pasa con comercios con varias sucursales?',
+    answer: 'Los comercios con varias sucursales pueden participar en misiones o bonus especiales, siempre siguiendo el mismo sistema: activación, canjes reales y permanencia.',
   },
   {
-    question: '¿Por qué el premio fuerte se libera recién con canjes?',
+    question: '¿Por qué la recompensa fuerte se libera recién con canjes?',
     answer: 'Porque buscamos comercios que funcionen de verdad dentro de Pasito. No premiamos solo registros: premiamos locales que reciben usuarios y generan movimiento real.',
   },
   {
@@ -195,7 +195,7 @@ const FAQS = [
   },
   {
     question: '¿Qué pasa si el comercio se baja antes de llegar a los 10 canjes?',
-    answer: 'En ese caso, solo se paga la parte correspondiente a los hitos ya cumplidos. El premio fuerte no se libera hasta que el comercio llegue a los canjes requeridos.',
+    answer: 'En ese caso, solo cuentan los hitos ya cumplidos. La recompensa fuerte no se libera hasta que el comercio llegue a los canjes requeridos.',
   },
   {
     question: '¿Qué pasa si dos Embajadores invitan al mismo comercio?',
@@ -207,10 +207,10 @@ const FAQS = [
   },
   {
     question: '¿Voy a tener un dashboard?',
-    answer: 'Sí. Vas a tener un panel donde vas a poder ver los comercios registrados con tu link, locales activos, canjes generados, Pasitos ganados, dinero acumulado, nivel y ranking mensual.',
+    answer: 'Sí. Vas a tener un panel donde vas a poder ver los comercios registrados con tu link, locales activos, canjes generados, Pasitos ganados, recompensas acumuladas, nivel y ranking mensual.',
   },
   {
-    question: '¿Qué más puedo ganar además de dinero?',
+    question: '¿Qué recompensas puedo ganar?',
     answer: 'Podés ganar Pasitos, merch oficial, acceso a eventos, activaciones con marcas, premios por misiones especiales y la posibilidad de convertirte en referente de una zona.',
   },
   {
@@ -292,7 +292,7 @@ export default function EmbajadoresPage() {
               Ganás por sumar comercios a <span className="text-[#EEFA7A]">Pasito.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/80 sm:text-xl">
-              Convertite en Embajador Pasito, invitá locales con tu link personal y ganá plata, Pasitos, merch y acceso a eventos cuando esos comercios se activan y generan canjes reales.
+              Convertite en Embajador Pasito, invitá locales con tu link personal y desbloqueá Pasitos, merch, beneficios y acceso a eventos cuando esos comercios se activan y generan canjes reales.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -392,20 +392,20 @@ export default function EmbajadoresPage() {
 
       <section id="ganancias" className="scroll-mt-24 bg-[#442920] py-20 text-[#EEFA7A] md:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-6">
-          <SectionLabel tone="yellow">Cuánto podés ganar</SectionLabel>
+          <SectionLabel tone="yellow">Qué podés desbloquear</SectionLabel>
           <h2 className="mt-5 max-w-6xl text-4xl leading-[1.02] text-white sm:text-6xl lg:text-7xl" style={{ fontFamily: 'var(--font-paytone)', letterSpacing: 0 }}>
-            La recompensa grande llega cuando el comercio mueve usuarios.
+            La recompensa fuerte llega cuando el comercio mueve usuarios.
           </h2>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-[#EEFA7A]/72">
-            El premio fuerte se libera cuando el comercio llega a 10 canjes reales. Así premiamos locales que funcionan dentro de Pasito, no solo registros.
+            El hito fuerte se libera cuando el comercio llega a 10 canjes reales. Así premiamos locales que funcionan dentro de Pasito, no solo registros.
           </p>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2">
-            {EARNINGS.map((earning) => {
-              const isGreen = earning.tone === 'green'
+            {REWARD_MILESTONES.map((reward) => {
+              const isGreen = reward.tone === 'green'
               return (
                 <article
-                  key={earning.label}
+                  key={reward.label}
                   className="min-h-[230px] rounded-xl border p-7"
                   style={{
                     background: isGreen ? '#0C6B45' : '#EEFA7A',
@@ -413,13 +413,11 @@ export default function EmbajadoresPage() {
                     borderColor: isGreen ? '#0C6B45' : '#EEFA7A',
                   }}
                 >
-                  <p className="text-xs font-bold uppercase opacity-70">{earning.label}</p>
-                  <p className="mt-6 text-5xl leading-none sm:text-6xl" style={{ fontFamily: 'var(--font-paytone)' }}>
-                    {earning.cash}
+                  <p className="text-xs font-bold uppercase opacity-70">{reward.label}</p>
+                  <p className="mt-6 text-4xl leading-tight sm:text-5xl" style={{ fontFamily: 'var(--font-paytone)' }}>
+                    {reward.title}
                   </p>
-                  <p className="mt-4 text-3xl leading-none" style={{ fontFamily: 'var(--font-paytone)' }}>
-                    {earning.pasitos}
-                  </p>
+                  <p className="mt-5 max-w-xl text-base leading-7 opacity-75">{reward.body}</p>
                 </article>
               )
             })}
@@ -460,7 +458,7 @@ export default function EmbajadoresPage() {
       <section className="bg-white py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-6">
           <div className="max-w-4xl">
-            <SectionLabel>Más que plata</SectionLabel>
+            <SectionLabel>Beneficios extra</SectionLabel>
             <h2 className="mt-5 text-4xl leading-[1.02] sm:text-6xl" style={{ fontFamily: 'var(--font-paytone)', letterSpacing: 0 }}>
               Ser Embajador también desbloquea comunidad, presencia y beneficios.
             </h2>
@@ -540,7 +538,7 @@ export default function EmbajadoresPage() {
               Vas a ver tu avance en tiempo real.
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-8 text-[#442920]/72">
-              Comercios registrados, locales activos, canjes generados, Pasitos ganados, dinero acumulado y ranking mensual en un mismo panel.
+              Comercios registrados, locales activos, canjes generados, Pasitos ganados, recompensas acumuladas y ranking mensual en un mismo panel.
             </p>
             <div className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#0C6B45] px-5 py-3 text-sm font-bold text-[#EEFA7A]">
               <BarChart3 size={18} />
