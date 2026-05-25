@@ -50,6 +50,8 @@
 :root {
   --green: #0C6B45;
   --yellow: #EEFA7A;
+  --font-paytone: "Paytone One", ui-sans-serif, system-ui, sans-serif;
+  --font-poppins: "Poppins", ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
