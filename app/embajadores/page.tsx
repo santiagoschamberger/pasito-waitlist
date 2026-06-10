@@ -83,14 +83,14 @@ const FLOW = [
 const EARNINGS = [
   {
     label: 'Local estándar',
-    cash: 'hasta $30.000',
-    pasitos: '+ 200 Pasitos',
+    cash: 'hasta $15.000',
+    pasitos: '+ 50 Pasitos',
     tone: 'yellow',
   },
   {
     label: 'Local con 3+ sucursales',
-    cash: 'hasta $40.000',
-    pasitos: '+ 300 Pasitos',
+    cash: 'hasta $20.000',
+    pasitos: '+ 75 Pasitos',
     tone: 'green',
   },
 ]
@@ -179,11 +179,11 @@ const FAQS = [
   },
   {
     question: '¿Cuándo cobro por un local estándar?',
-    answer: 'Por un local estándar podés ganar hasta $30.000 + 200 Pasitos: una parte cuando se activa, otra cuando llega a 10 canjes reales y otra si sigue activo 30 días después.',
+    answer: 'Por un local estándar podés ganar hasta $15.000 + 50 Pasitos: una parte cuando se activa, otra cuando llega a 10 canjes reales y otra si sigue activo 30 días después.',
   },
   {
     question: '¿Cuándo cobro por un local con 3 o más sucursales?',
-    answer: 'Por un comercio con 3 o más sucursales podés ganar hasta $40.000 + 300 Pasitos, siguiendo el mismo sistema: activación, canjes reales y permanencia.',
+    answer: 'Por un comercio con 3 o más sucursales podés ganar hasta $20.000 + 75 Pasitos, siguiendo el mismo sistema: activación, canjes reales y permanencia.',
   },
   {
     question: '¿Por qué el premio fuerte se libera recién con canjes?',
