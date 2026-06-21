@@ -93,6 +93,9 @@ export default function Page() {
             <Link href="/terminos" className="underline-offset-4 hover:underline">
               Términos y condiciones
             </Link>
+            <Link href="/terminos/decathlon" className="underline-offset-4 hover:underline">
+              Términos Desafío Decathlon
+            </Link>
           </nav>
         </footer>
       </div>
